@@ -41,6 +41,7 @@ val CoolantCell60K = <IC2:reactorCoolantSix>;
 val AdvCircuit = <ore:circuitAdvanced>;
 val LapotronCrystal = <ore:batteryMaster>;
 val LapotronicEOrb = <ore:batteryUltimate>;
+val IVElectricMotor = <gregtech:gt.metaitem.01:32604>;
 val TSteelRotor = <ore:rotorTungstenSteel>;
 
 val SSteelPlate = <ore:plateStainlessSteel>;
@@ -63,7 +64,10 @@ val PlatinumCable4x = <ore:cableGt04Platinum>;
 val PlatinumCable8x = <ore:cableGt08Platinum>;
 val AlCable8x = <ore:cableGt08Aluminium>;
 val NiobiumTiCable8x = <ore:cableGt08NiobiumTitanium>;
+
+val AFB = <AFSU:ALC>;
 val Singularity = <appliedenergistics2:item.ItemMultiMaterial:48>;
+val SunnariumPart = <AdvancedSolarPanel:asp_crafting_items:9>;
 
 val Wrench = <ore:craftingToolWrench>;
 val HHammer = <ore:craftingToolHardHammer>;

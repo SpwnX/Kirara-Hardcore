@@ -29,6 +29,9 @@ val WhiteLamp = <IC2NuclearControl:blockNuclearControlLight>;
 val Thermometer = <IC2NuclearControl:ItemToolThermometer:*>;
 val DigitalThermometer = <IC2NuclearControl:ItemToolDigitalThermometer:*>;
 
+val ActivityDetect = <gregtech:gt.metaitem.01:32731>;
+val FluidDetect = <gregtech:gt.metaitem.01:32732>;
+val EDetect = <gregtech:gt.metaitem.01:32734>;
 val EUDetector = <IC2:itemCable:11>;
 
 val AdvCircuit = <ore:circuitAdvanced>;
@@ -43,14 +46,25 @@ val SteelRod = <ore:stickSteel>;
 val AnnealedCable = <ore:cableGt01AnnealedCopper>;
 val AnnealedCable2x = <ore:cableGt02AnnealedCopper>;
 val AnnealedCable4x = <ore:cableGt04AnnealedCopper>;
+val HVSensor = <gregtech:gt.metaitem.01:32692>;
+val LVSensor = <gregtech:gt.metaitem.01:32690>;
+val MVEmitter = <gregtech:gt.metaitem.01:32681>;
+val HVEmitter = <gregtech:gt.metaitem.01:32682>;
+val MVSensor = <gregtech:gt.metaitem.01:32691>;
+val LVMachineHull = <gregtech:gt.blockmachines:11>;
+val MVMachineHull = <gregtech:gt.blockmachines:12>;
+val MVTransformer = <gregtech:gt.blockmachines:22>;
+val HVTransformer = <gregtech:gt.blockmachines:23>;
 
 val RedAlloyWire = <RedLogic:redlogic.wire>;
 val Noteblock = <minecraft:noteblock>;
 val Clock = <minecraft:clock>;
+val IronNoteblock = <computronics:computronics.ironNoteBlock>;
 val RedstoneLamp = <minecraft:redstone_lamp>;
 val ScreenTier3 = <OpenComputers:screen3>;
 val ScreenTier2 = <OpenComputers:screen2>;
 val ScreenTier1 = <OpenComputers:screen1>;
+val ScreenGT = <gregtech:gt.metaitem.01:32740>;
 
 val RemoteSensorKit = <IC2NuclearControl:ItemRemoteSensorKit>;
 val ESensorKit = <IC2NuclearControl:ItemEnergySensorKit>;
@@ -65,6 +79,8 @@ val TextCard = <IC2NuclearControl:ItemTextCard>;
 val OverclockerUp = <IC2:upgradeModule>;
 val SmallPowerUnit = <IC2:itemRecipePart:3>;
 val MercuryCell = <IC2:itemFluidCell>.withTag({Fluid:{FluidName:"mercury", Amount:1000}});
+val ClearPane = <TConstruct:GlassPane>;
+val WhiteClearPane = <TConstruct:GlassPaneClearStained>;
 
 val BlueDye = <ore:dyeBlue>;
 val RedDye = <ore:dyeRed>;
@@ -147,4 +163,12 @@ recipes.remove(RangeUp);
 
 // --- Text Card
 recipes.remove(TextCard);
+
+
+// *======= Adding Back Recipes =======*
+
+
+
+// *======= Other Stuff =======*
+
 

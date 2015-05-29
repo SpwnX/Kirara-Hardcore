@@ -62,6 +62,9 @@ val Beeswax = <Forestry:beeswax>;
 val AnyPollen = <Forestry:pollen>;
 val RoyalJelly = <ore:dropRoyalJelly>;
 
+val ClearPane = <TConstruct:GlassPane>;
+val GlowstoneGlass = <ExtraUtilities:decorativeBlock2:7>;
+val SkyBlock = <OpenBlocks:sky:1>;
 val Netherrack = <ore:stoneNetherrack>;
 val Vines = <minecraft:vine>;
 val Sand = <ore:sand>;
@@ -93,6 +96,7 @@ val EnderPearlPlate = <ore:plateEnderPearl>;
 
 val DataCircuit = <ore:circuitData>;
 val AdvCircuit = <ore:circuitAdvanced>;
+val EngineerProcessor = <appliedenergistics2:item.ItemMultiMaterial:24>;
 
 val TitaniumScrew = <ore:screwTitanium>;
 val TitaniumRod = <ore:stickTitanium>;
@@ -104,6 +108,11 @@ val SugarCell = <IC2:itemFluidCell>.withTag({Fluid:{FluidName:"sugar.molten", Am
 val WaterCell = <ore:cellWater>;
 val LavaCell = <ore:cellLava>;
 val IceCell = <ore:cellIce>;
+
+val MVPiston = <gregtech:gt.metaitem.01:32641>;
+val EVPiston = <gregtech:gt.metaitem.01:32643>;
+val EVMotor = <gregtech:gt.metaitem.01:32603>;
+val HVBuffer = <gregtech:gt.blockmachines:9233>;
 
 val HHammer = <ore:craftingToolHardHammer>;
 

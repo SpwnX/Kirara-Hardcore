@@ -3,6 +3,17 @@
 
 
 
+// *======= Importing Stuff =======*
+
+
+import mods.ic2.Compressor;
+import mods.gregtech.ImplosionCompressor;
+import mods.gregtech.Assembler;
+import mods.gregtech.AlloySmelter;
+import mods.ic2.Macerator;
+
+
+
 // *======= Variables =======*
 
 
@@ -263,20 +274,29 @@ val BlackDye = <ore:dyeBlack>;
 
 // ||||||| Other Blocks |||||||
 
+
+val AshCloud = <Natura:Cloud:2>;
 val AshBlock = <BiomesOPlenty:ash>;
+val OctupleCobble = <ExtraUtilities:cobblestone_compressed:7>;
 val StandardRail = <Railcraft:part.rail>;
 val AdvancedRail = <Railcraft:part.rail:1>;
 val WoodRailbed = <Railcraft:part.railbed>;
+val ClearPane = <TConstruct:GlassPane>;
+val ObsidianChest = <IronChest:BlockIronChest:6>;
 val Detector = <Railcraft:detector:1>;
 val Timer = <RedLogic:redlogic.gates:12>;
+val CongealedSlime = <TConstruct:slime.gel:1>;
 val StoneCover = <ForgeMicroblock:microblock:1>.withTag({mat:"tile.stone"});
 
 
 // ||||||| Other Items |||||||
 
+
+val Bowstring = <TConstruct:bowstring>;
 val IronPlate = <ore:plateAnyIron>;
 val IronRod = <ore:stickAnyIron>;
 val DiamondRod = <ore:stickDiamond>;
+val DiamondPlate = <gregtech:gt.metaitem.01:17500>;
 val StoneRod = <ore:rodStone>;
 val IronScrew = <ore:screwAnyIron>;
 val SteelScrew = <ore:screwSteel>;
@@ -286,6 +306,8 @@ val IronGear = <ore:gearAnyIron>;
 val RedAlloyWire = <ore:stickRedAlloy>;
 val RedAlloyRod = <ore:stickRedAlloy>;
 val GlowstonePlate = <ore:plateGlowstone>;
+val Paintbrush = <ExtraUtilities:paintbrush>;
+val Cattail = <BiomesOPlenty:plants:7>;
 val CoalCoke = <ore:fuelCoke>;
 val Phosphorous = <ore:dustPhosphorite>;
 val Beeswax = <ore:itemBeeswax>;
@@ -296,11 +318,17 @@ val Rubber = <ore:itemRawRubber>;
 val ImpregnatedStick = <Forestry:oakStick>;
 val ObsidianPlate = <ore:plateObsidian>;
 val DenseObsidianPlate = <ore:plateDenseObsidian>;
+val Alumentum = <Thaumcraft:ItemResource>;
+val Nitor = <Thaumcraft:ItemResource:1>;
 val TinyNStarDust = <ore:dustTinyNetherStar>;
 val EnderEyeRod = <ore:stickEnderEye>;
+val GlowstoneGlass = <ExtraUtilities:decorativeBlock2:7>;
 val AnyQuartz = <ore:craftingQuartz>;
 val CertusPlate = <ore:plateCertusQuartz>;
 val NQuartzPlate = <ore:plateNetherQuartz>;
+val AshPile = <BiomesOPlenty:misc:1>;
+val Lignite = <UndergroundBiomes:ligniteCoal>;
+val NaturaSulfur = <Natura:barleyFood:4>;
 val RedAlloyBolt = <ore:boltRedAlloy>;
 val MagIronRod = <ore:stickIronMagnetic>;
 val SteelPlate = <ore:plateSteel>;
@@ -311,13 +339,18 @@ val IronBolt = <ore:boltAnyIron>;
 val SteelRod = <ore:stickSteel>;
 val SteelRing = <ore:ringSteel>;
 val GoldPlate = <ore:plateGold>;
+val ImpLeather = <Natura:barleyFood:6>;
 val WaterBucket = <ore:bucketWater>;
 val WoodPulp = <ore:dustWood>;
+val Fossil = <UndergroundBiomes:fossilPiece:*>;
+val WailerRemains = <ihl:skull>;
+val FracturedBone = <AWWayofTime:bloodMagicBaseAlchemyItems:5>;
 
 
 // ||||||| Tools |||||||
 
 
+val AnvilMold = <gregtech:gt.metaitem.01:32314>;
 val Screwdriver = <ore:craftingToolScrewdriver>;
 val HHammer = <ore:craftingToolHardHammer>;
 val SHammer = <ore:craftingToolSoftHammer>;
@@ -335,11 +368,570 @@ val WireCutter = <ore:craftingToolWireCutter>;
 // ||||||| Blocks |||||||
 
 
+// --- Chest
+recipes.remove(Chest);
+
+// --- Trapped Chest
+recipes.remove(TrappedChest);
+
+// --- Bedrock
+recipes.remove(Bedrock);
+
+// --- Dispenser
+recipes.remove(Dispenser);
+
+// --- Dropper
+recipes.remove(Dropper);
+
+// --- Piston
+recipes.remove(Piston);
+
+// --- Sticky Piston
+recipes.remove(SPiston);
+
+// --- Rail
+recipes.remove(Rail);
+
+// --- Booster Rail
+recipes.remove(BoosterRail);
+
+// --- Detector Rail
+recipes.remove(DetectorRail);
+
+// --- Activator Rail
+recipes.remove(ActivatorRail);
+
+// --- Noteblock
+recipes.remove(Noteblock);
+
+// --- Jukebox
+recipes.remove(Jukebox);
+
+// --- Bookshelf
+recipes.remove(Bookshelf);
+
+// --- Mossy Cobblestone
+recipes.remove(MossyCobble);
+
+// --- Mossy Stone Bricks
+recipes.remove(MossyBricks);
+
+// --- Obsidian
+recipes.remove(Obsidian);
+
+// --- Jack O' Lantern
+recipes.remove(JackOLantern);
+
+// --- Trapdoor
+recipes.remove(Trapdoor);
+
+// --- Pressure Plate
+recipes.remove(PressurePlate);
+
+// --- Wooden Pressure Plate
+recipes.remove(WoodPPlate);
+
+// --- Ladder
+recipes.remove(Ladder);
+
+// --- Fence
+recipes.remove(Fence);
+
+// --- Fence Gate
+recipes.remove(FenceGate);
+
+// --- Iron Bars
+recipes.remove(IronBars);
+
 // --- Enchantment Table
 recipes.remove(EnchantingTable);
+
+// --- Redstone Lamp
+recipes.remove(RSLamp);
 
 // --- Ender Chest
 recipes.remove(EnderChest);
 
 // --- Beacon
 recipes.remove(Beacon);
+
+// --- Anvil
+recipes.remove(Anvil);
+
+// --- Daylight Sensor
+recipes.remove(DaylightSensor);
+
+// --- Hopper
+recipes.remove(Hopper);
+
+// --- Sandstone
+recipes.remove(Sandstone);
+
+// --- Chiseled Sandstone
+recipes.remove(ChiseledSandstone);
+
+// --- Smooth Sandstone
+recipes.remove(SmoothSandstone);
+
+// --- TNT
+recipes.remove(TNT);
+
+// --- Quartz Block
+recipes.remove(QuartzBlock);
+
+// --- Chiseled Quartz
+recipes.remove(ChiseledQuartz);
+
+// --- Minecart With Chest
+recipes.removeShaped(ChestCart);
+
+// --- Minecart With Furnace
+recipes.removeShaped(FurnaceCart);
+
+// --- Minecart With Hopper
+recipes.removeShaped(HopperCart);
+
+// --- Minecart With TNT
+recipes.removeShaped(TNTCart);
+
+// --- Glass Pane
+recipes.remove(<minecraft:glass_pane>);
+
+// --- Brewing Stand
+recipes.remove(BrewingStand);
+
+// --- Wooden Door
+recipes.remove(WoodDoor);
+
+// --- Iron Door
+recipes.remove(IronDoor);
+
+// --- Bed
+recipes.remove(Bed);
+
+// --- Redstone Repeater
+recipes.remove(Repeater);
+
+
+// ||||||| Items |||||||
+
+
+// --- Torch
+recipes.remove(Torch);
+
+// --- Lever
+recipes.remove(Lever);
+
+// --- Button
+recipes.remove(Button);
+
+// --- Wooden Button
+recipes.remove(WoodButton);
+
+// --- Redstone Torch
+recipes.remove(RSTorch);
+
+// --- Tripwire Hook
+recipes.remove(Tripwire);
+
+// --- Book
+recipes.remove(Book);
+
+// --- Leather
+recipes.removeShaped(Leather);
+
+// --- Diamond Sword
+recipes.remove(DSword);
+
+// --- Diamond Shovel
+recipes.remove(DShovel);
+
+// --- Diamond Pickaxe
+recipes.remove(DPick);
+
+// --- Diamond Axe
+recipes.remove(DAxe);
+
+// --- Diamond Hoe
+recipes.remove(DHoe);
+
+// --- Diamond Helmet
+recipes.remove(DHelm);
+
+// --- Diamond Chestplate
+recipes.remove(DChestplate);
+
+// --- Diamond Leggings
+recipes.remove(DLegs);
+
+// --- Diamond Boots
+recipes.remove(DBoots);
+
+// --- Coal
+recipes.removeShaped(Coal, [
+[AshPile, AshPile, AshPile],
+[AshPile, AshPile, AshPile],
+[AshPile, AshPile, AshPile]]);
+// -
+recipes.removeShaped(Coal, [
+[Lignite, Lignite, Lignite],
+[Lignite, Lignite, Lignite],
+[Lignite, Lignite, Lignite]]);
+
+// --- Charcoal
+recipes.removeShaped(Charcoal, [
+[AshCloud, AshCloud, AshCloud],
+[AshCloud, AshCloud, AshCloud],
+[AshCloud, AshCloud, AshCloud]]);
+// -
+furnace.remove(Charcoal);
+
+// --- Gunpowder
+recipes.removeShaped(Gunpowder, [
+[NaturaSulfur, NaturaSulfur],
+[NaturaSulfur, NaturaSulfur]]);
+
+// --- Slimeball
+recipes.removeShaped(Slimeball * 4);
+
+// --- Eye Of Ender
+recipes.remove(EnderEye);
+
+// --- Saddle
+recipes.remove(Saddle);
+
+// --- Clock
+recipes.remove(Clock);
+
+// --- Compass
+recipes.remove(Compass);
+
+// --- Iron Ingot
+recipes.remove(IronIngot);
+
+// --- Iron Nuggets
+recipes.remove(IronNugget);
+
+// --- Gold Ingot
+recipes.remove(GoldIngot);
+
+// --- Gold Nuggets
+recipes.remove(GoldNugget);
+
+// --- Golden Apple
+recipes.remove(AllGoldenApples);
+
+// --- Golden Carrot
+recipes.remove(GoldenCarrot);
+
+// --- Sugar
+recipes.remove(Sugar);
+
+// --- Painting
+recipes.remove(Painting);
+
+// --- Item Frame
+recipes.remove(ItemFrame);
+
+// --- Sign
+recipes.remove(Sign);
+
+// --- Boat
+recipes.remove(Boat);
+
+// --- Paper
+recipes.remove(Paper);
+
+// --- Fishing Rod
+recipes.remove(FishRod);
+
+// --- Lapis
+recipes.remove(Lapis * 9);
+
+// --- Bonemeal
+recipes.removeShapeless(Bonemeal);
+
+// --- Cake
+recipes.removeShaped(Cake, [
+[<*>, <*>, <*>],
+[Sugar, <*>, Sugar],
+[null, <*>, null]]);
+
+// --- Fermented Spider Eye
+recipes.remove(FSpiderEye);
+
+// --- Glistering Melon
+recipes.remove(GMelon);
+
+// --- Flower Pot
+recipes.remove(FlowerPot);
+
+// --- Lead
+recipes.remove(Lead);
+
+
+// ||||||| Colored Wool |||||
+
+
+// --- White Wool
+recipes.remove(Wool);
+
+// --- Orange Wool
+recipes.remove(OrangeWool);
+
+// --- Magenta Wool
+recipes.remove(MagentaWool);
+
+// --- Light Blue Wool
+recipes.remove(LightBlueWool);
+
+// --- Yellow Wool
+recipes.remove(YellowWool);
+
+// --- Lime Wool
+recipes.remove(LimeWool);
+
+// --- Pink Wool
+recipes.remove(PinkWool);
+
+// --- Gray Wool
+recipes.remove(GrayWool);
+
+// --- Light Gray Wool
+recipes.remove(LightGrayWool);
+
+// --- Cyan Wool
+recipes.remove(CyanWool);
+
+// --- Purple Wool
+recipes.remove(PurpleWool);
+
+// --- Blue Wool
+recipes.remove(BlueWool);
+
+// --- Brown Wool
+recipes.remove(BrownWool);
+
+// --- Green Wool
+recipes.remove(GreenWool);
+
+// --- Red Wool
+recipes.remove(RedWool);
+
+// --- Black Wool
+recipes.remove(BlackWool);
+
+
+// ||||||| Colored Glass |||||
+
+
+// --- White Glass
+recipes.remove(WhiteGlass);
+
+// --- Orange Glass
+recipes.remove(OrangeGlass);
+
+// --- Magenta Glass
+recipes.remove(MagentaGlass);
+
+// --- Light Blue Glass
+recipes.remove(LightBlueGlass);
+
+// --- Yellow Glass
+recipes.remove(YellowGlass);
+
+// --- Lime Glass
+recipes.remove(LimeGlass);
+
+// --- Pink Glass
+recipes.remove(PinkGlass);
+
+// --- Gray Glass
+recipes.remove(GrayGlass);
+
+// --- Light Gray Glass
+recipes.remove(LightGrayGlass);
+
+// --- Cyan Glass
+recipes.remove(CyanGlass);
+
+// --- Purple Glass
+recipes.remove(PurpleGlass);
+
+// --- Blue Glass
+recipes.remove(BlueGlass);
+
+// --- Brown Glass
+recipes.remove(BrownGlass);
+
+// --- Green Glass
+recipes.remove(GreenGlass);
+
+// --- Red Glass
+recipes.remove(RedGlass);
+
+// --- Black Glass
+recipes.remove(BlackGlass);
+
+
+// ||||||| Colored Glass Pane |||||
+
+
+// --- White Glass Pane
+recipes.remove(WhiteGlassPane);
+
+// --- Orange Glass Pane
+recipes.remove(OrangeGlassPane);
+
+// --- Magenta Glass Pane
+recipes.remove(MagentaGlassPane);
+
+// --- Light Blue Glass Pane
+recipes.remove(LightBlueGlassPane);
+
+// --- Yellow Glass Pane
+recipes.remove(YellowGlassPane);
+
+// --- Lime Glass Pane
+recipes.remove(LimeGlassPane);
+
+// --- Pink Glass Pane
+recipes.remove(PinkGlassPane);
+
+// --- Gray Glass Pane
+recipes.remove(GrayGlassPane);
+
+// --- Light Gray Glass Pane
+recipes.remove(LightGrayGlassPane);
+
+// --- Cyan Glass Pane
+recipes.remove(CyanGlassPane);
+
+// --- Purple Glass Pane
+recipes.remove(PurpleGlassPane);
+
+// --- Blue Glass Pane
+recipes.remove(BlueGlassPane);
+
+// --- Brown Glass Pane
+recipes.remove(BrownGlassPane);
+
+// --- Green Glass Pane
+recipes.remove(GreenGlassPane);
+
+// --- Red Glass Pane
+recipes.remove(RedGlassPane);
+
+// --- Black Glass Pane
+recipes.remove(BlackGlassPane);
+
+
+// ||||||| Colored Carpet |||||
+
+
+// --- White Carpet
+recipes.remove(WhiteCarpet);
+
+// --- Orange Carpet
+recipes.remove(OrangeCarpet);
+
+// --- Magenta Carpet
+recipes.remove(MagentaCarpet);
+
+// --- Light Blue Carpet
+recipes.remove(LightBlueCarpet);
+
+// --- Yellow Carpet
+recipes.remove(YellowCarpet);
+
+// --- Lime Carpet
+recipes.remove(LimeCarpet);
+
+// --- Pink Carpet
+recipes.remove(PinkCarpet);
+
+// --- Gray Carpet
+recipes.remove(GrayCarpet);
+
+// --- Light Gray Carpet
+recipes.remove(LightGrayCarpet);
+
+// --- Cyan Carpet
+recipes.remove(CyanCarpet);
+
+// --- Purple Carpet
+recipes.remove(PurpleCarpet);
+
+// --- Blue Carpet
+recipes.remove(BlueCarpet);
+
+// --- Brown Carpet
+recipes.remove(BrownCarpet);
+
+// --- Green Carpet
+recipes.remove(GreenCarpet);
+
+// --- Red Carpet
+recipes.remove(RedCarpet);
+
+// --- Black Carpet
+recipes.remove(BlackCarpet);
+
+
+// ||||||| Colored Clay Block |||||
+
+
+// --- White Stained Clay Block
+recipes.remove(WhiteHardClay);
+
+// --- Orange Stained Clay Block
+recipes.remove(OrangeHardClay);
+
+// --- Magenta Stained Clay Block
+recipes.remove(MagentaHardClay);
+
+// --- Light Blue Stained Clay Block
+recipes.remove(LightBlueHardClay);
+
+// --- Yellow Stained Clay Block
+recipes.remove(YellowHardClay);
+
+// --- Lime Stained Clay Block
+recipes.remove(LimeHardClay);
+
+// --- Pink Stained Clay Block
+recipes.remove(PinkHardClay);
+
+// --- Gray Stained Clay Block
+recipes.remove(GrayHardClay);
+
+// --- Light Gray Stained Clay Block
+recipes.remove(LightGrayHardClay);
+
+// --- Cyan Stained Clay Block
+recipes.remove(CyanHardClay);
+
+// --- Purple Stained Clay Block
+recipes.remove(PurpleHardClay);
+
+// --- Blue Stained Clay Block
+recipes.remove(BlueHardClay);
+
+// --- Brown Stained Clay Block
+recipes.remove(BrownHardClay);
+
+// --- Green Stained Clay Block
+recipes.remove(GreenHardClay);
+
+// --- Red Stained Clay Block
+recipes.remove(RedHardClay);
+
+// --- Black Stained Clay Block
+recipes.remove(BlackHardClay);
+
+
+
+// *======= Adding Back Recipes =======*
+
+
+// #======= Other Stuff =======#

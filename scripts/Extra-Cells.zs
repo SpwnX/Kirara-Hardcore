@@ -128,6 +128,27 @@ val OsmiumPlate = <ore:plateOsmium>;
 val NeutronPlate = <ore:plateNeutronium>;
 val OsmiumNqPlate = <ore:plateAlloyOsmiumNaquadah>;
 
+val GtNQuartzScrew = <gregtech:gt.metaitem.01:27522>;
+val GtNQuartzBolt = <gregtech:gt.metaitem.01:27622>;
+val GtQuartziteScrew = <gregtech:gt.metaitem.01:27523>;
+val GtQuartziteBolt = <gregtech:gt.metaitem.01:27623>;
+val GtCertusScrew = <gregtech:gt.metaitem.01:27516>;
+val GtCertusBolt = <gregtech:gt.metaitem.01:27616>;
+val GtCCertusScrew = <gregtech:gt.metaitem.01:27517>;
+val GtCCertusBolt = <gregtech:gt.metaitem.01:27617>;
+
+val HVPump = <gregtech:gt.metaitem.01:32612>;
+val EVPump = <gregtech:gt.metaitem.01:32613>;
+val EVRobotArm = <gregtech:gt.metaitem.01:32653>;
+val Monitor = <gregtech:gt.metaitem.01:32740>;
+
+val CPUMachineCasing = <gregtech:gt.blockcasings2:6>;
+val OBTank = <OpenBlocks:tank>;
+val ClearPane = <TConstruct:GlassPane>;
+val ObsidianChest = <IronChest:BlockIronChest:6>;
+
+val BlockMold = <gregtech:gt.metaitem.01:32308>;
+
 val Screwdriver = <ore:craftingToolScrewdriver>;
 val SHammer = <ore:craftingToolSoftHammer>;
 val HHammer = <ore:craftingToolHardHammer>;

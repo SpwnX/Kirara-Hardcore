@@ -2,6 +2,14 @@
 // ******* the Grind-Complex modpack *******
 
 
+// *======= Importing Stuff =======*
+
+
+import mods.nei.NEI;
+import mods.ic2.Compressor;
+import mods.ic2.Macerator;
+
+
 
 // *======= Variables =======*
 
@@ -80,6 +88,14 @@ val BOPTanzanite = <BiomesOPlenty:gems:4>;
 val BOPMalachite = <BiomesOPlenty:gems:5>;
 val BOPSapphire = <BiomesOPlenty:gems:6>;
 val BOPAmber = <BiomesOPlenty:gems:7>;
+
+val GtAshPile = <gregtech:gt.metaitem.01:2815>;
+val Amethyst = <gregtech:gt.metaitem.02:28509>;
+val Ruby = <gregtech:gt.metaitem.02:28502>;
+val Topaz = <gregtech:gt.metaitem.02:28507>;
+val Tanzanite = <gregtech:gt.metaitem.02:28508>;
+val Sapphire = <gregtech:gt.metaitem.02:28503>;
+val Amber = <gregtech:gt.metaitem.02:28514>;
 
 val Sand = <minecraft:sand>;
 val Planks = <ore:plankWood>;

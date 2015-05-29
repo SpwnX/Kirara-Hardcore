@@ -3,6 +3,16 @@
 
 
 
+// *======= Importing Stuff =======*
+
+
+import mods.gregtech.Assembler;
+import mods.ic2.Compressor;
+import mods.gregtech.PlateBender;
+import mods.gregtech.Wiremill;
+
+
+
 // *======= Variables =======*
 
 
@@ -40,6 +50,11 @@ val AlWire = <ore:wireGt01Aluminium>;
 val CopperWire2x = <ore:wireGt02AnyCopper>;
 val GoldWire2x = <ore:wireGt02Gold>;
 val AlWire2x = <ore:wireGt02Aluminium>;
+
+val LVHull = <gregtech:gt.blockmachines:11>;
+val MVHull = <gregtech:gt.blockmachines:12>;
+val HVHull = <gregtech:gt.blockmachines:13>;
+val EVHull = <gregtech:gt.blockmachines:14>;
 
 val NANDChip = <ore:circuitPrimitive>;
 val BasicCircuit = <ore:circuitBasic>;
@@ -226,3 +241,250 @@ recipes.remove(<IC2:itemFluidCell>);
 
 // --- Steam Turbine Blade ---
 recipes.remove(<IC2:itemSteamTurbineBlade>);
+
+//add Recipes
+
+//Generator
+recipes.addShaped(<IC2:blockGenerator>, [
+[<ore:cableGt01Tin>, <ore:batteryBasic>, <ore:cableGt01Tin>],
+[SteelPlate, <gregtech:gt.blockmachines:1120>, SteelPlate],
+[<gregtech:gt.metaitem.01:32600>, <gregtech:gt.blockmachines:100>, <IC2:itemRecipePart>]]);
+
+//Geothermal Generator
+recipes.addShaped(<IC2:blockGenerator:1>, [
+[<ore:cableGt01Tin>, <gregtech:gt.metaitem.01:32405>, <ore:cableGt01Tin>],
+[AlPlate, <gregtech:gt.blockcasings2>, AlPlate],
+[<gregtech:gt.metaitem.01:32600>, <IC2:blockGenerator>, <IC2:itemRecipePart>]]);
+
+//Electric Heat Generator
+recipes.addShaped(<IC2:blockHeatGenerator:3>, [
+[<IC2:itemCable>, <gregtech:gt.metaitem.01:32501>, <IC2:itemCable>],
+[BasicCircuit, <gregtech:gt.blockcasings:2>, BasicCircuit],
+[<IC2:itemCasing:4>, <IC2:itemRecipePart:5>, <IC2:itemCasing:4>]]);
+
+//Sterling Heat Generator
+recipes.addShaped(<IC2:blockGenerator:8>, [
+[<IC2:itemCasing:4>, <IC2:itemRecipePart:5>, <IC2:itemCasing:4>],
+[<IC2:itemBatREDischarged>, <IC2:blockGenerator>, <IC2:itemBatREDischarged>],
+[<IC2:itemCable>, <IC2:itemBatREDischarged>, <IC2:itemCable>]]);
+
+//Kinetic Wind Generator
+recipes.addShaped(<IC2:blockKineticGenerator>, [
+[<ore:plateTungstenSteel>, AdvCircuit, <ore:plateTungstenSteel>],
+[<ore:cableGt02Gold>, <ore:craftingGenerator>, <ore:cableGt02Gold>],
+[<gregtech:gt.metaitem.01:32602>, <IC2:itemRecipePart>, <gregtech:gt.metaitem.01:32602>]]);
+
+//Reactor Chamber
+recipes.addShaped(<IC2:blockReactorChamber>, [
+[<ore:plateDenseLead>, <ore:plateAlloyAdvanced>, <ore:plateDenseLead>],
+[<ore:plateDenseLead>, <IC2:blockMachine:12>, <ore:plateDenseLead>],
+[<ore:plateDenseLead>, <ore:plateAlloyAdvanced>, <ore:plateDenseLead>]]);
+
+//Heat Conductor
+recipes.addShaped(<IC2:itemRecipePart:5>, [
+[<ore:plateRubber>, <ore:plateCopper>, <ore:plateRubber>],
+[<ore:plateCopper>, <ore:plateSilver>, <ore:plateCopper>],
+[<ore:plateRubber>, <ore:plateCopper>, <ore:plateRubber>]]);
+
+//Advanced Battery
+recipes.addShaped(<IC2:itemAdvBat>, [
+[<ore:wireGt08Copper>, null, <ore:wireGt08Copper>],
+[<IC2:itemCasing>, <gregtech:gt.metaitem.01:32501>, <IC2:itemCasing>],
+[<IC2:itemCasing>, <IC2:itemCasing:6>, <IC2:itemCasing>]]);
+
+//Bat Box
+recipes.addShaped(<IC2:blockElectric>, [
+[<IC2:itemCable:13>, SteelPlate, <IC2:itemCable:13>],
+[<IC2:itemBatREDischarged>, <gregtech:gt.blockmachines:11>, <IC2:itemBatREDischarged>],
+[SteelPlate, <IC2:itemBatREDischarged>, SteelPlate]]);
+
+//Wood Scaffold
+recipes.addShapeless(<IC2:blockScaffold>, [<ore:frameGtWood>, <gregtech:gt.metaitem.01:17809>]);
+
+//Iron Scaffold
+recipes.addShapeless(<IC2:blockIronScaffold>, [<ore:frameGtIron>, IronPlate]);
+
+//Mining laser
+recipes.addShaped(<IC2:itemToolMiningLaser>, [
+[<ore:lensRuby>, <IC2:reactorCoolantSix>, EliteBattery],
+[TiPlate, TiPlate, AdvCircuit],
+[null, <ore:plateAlloyAdvanced>, <IC2:itemRecipePart:2>]]);
+
+//Bat Pack
+recipes.addShaped(<IC2:itemArmorBatpack>, [
+[<IC2:itemBatREDischarged>, BasicCircuit, <IC2:itemBatREDischarged>],
+[<IC2:itemBatREDischarged>, AlPlate, <IC2:itemBatREDischarged>],
+[<IC2:itemBatREDischarged>, <ore:wireGt02Tin>, <IC2:itemBatREDischarged>]]);
+
+//Advanced Batpack
+recipes.addShaped(<IC2:itemArmorAdvBatpack>, [
+[AdvREBattery, GoodCircuit, AdvREBattery],
+[AdvREBattery, <IC2:itemArmorBatpack:*>, AdvREBattery],
+[AdvREBattery, <ore:wireGt04Copper>, AdvREBattery]]);
+
+//Energy Pack
+recipes.addShaped(<IC2:itemArmorEnergypack>, [
+[AdvCircuit, <IC2:itemCasing:5>, AdvCircuit],
+[EliteBattery, <IC2:itemArmorAdvBatpack:*>, EliteBattery],
+[<IC2:itemCasing:5>, <ore:wireGt08Gold>, <IC2:itemCasing:5>]]);
+
+//Electric Jetpack
+recipes.addShaped(<IC2:itemArmorJetpackElectric>, [
+[AlPlate, <IC2:itemArmorBatpack:*>, AlPlate],
+[<GraviSuite:itemSimpleItem:6>, <gregtech:gt.metaitem.01:32603>, <GraviSuite:itemSimpleItem:6>],
+[<ore:wireGt04Kanthal>, AdvCircuit, <ore:wireGt04Kanthal>]]);
+
+//Biogas Jetpack
+recipes.addShaped(<IC2:itemArmorJetpack>, [
+[<ore:plateTungstenSteel>, <IC2:reactorCoolantSix>, <ore:plateTungstenSteel>],
+[<gregtech:gt.metaitem.01:32405>, <IC2:itemRecipePart:6>, <gregtech:gt.metaitem.01:32405>],
+[<GraviSuite:itemSimpleItem:6>, AdvCircuit, <GraviSuite:itemSimpleItem:6>]]);
+
+//Reactor Plating
+recipes.addShaped(<IC2:reactorPlating>, [
+[<ore:plateAlloyAdvanced>, <ore:plateAlloyAdvanced>, <ore:plateAlloyAdvanced>],
+[<ore:plateAlloyAdvanced>, <ore:plateDenseLead>, <ore:plateAlloyAdvanced>],
+[<ore:plateAlloyAdvanced>, <ore:plateAlloyAdvanced>, <ore:plateAlloyAdvanced>]]);
+
+//Heat Capacity Reactor Plating
+recipes.addShaped(<IC2:reactorPlatingHeat>, [
+[<ore:plateDenseCopper>, <ore:plateCopper>, <ore:plateDenseCopper>],
+[<ore:plateSilver>, <IC2:reactorPlating>, <ore:plateSilver>],
+[<ore:plateDenseCopper>, <ore:plateCopper>, <ore:plateDenseCopper>]]);
+
+//Containment Reactor Plating
+recipes.addShaped(<IC2:reactorPlatingExplosive>, [
+[<ore:plateDenseLead>, <ore:plateAlloyAdvanced>, <ore:plateDenseLead>],
+[<ore:plateAlloyAdvanced>, <IC2:reactorPlating>, <ore:plateAlloyAdvanced>],
+[<ore:plateDenseLead>, <ore:plateAlloyAdvanced>, <ore:plateDenseLead>]]);
+
+//Copper Cable
+recipes.addShaped(<IC2:itemCable:1>, [
+[WireCutter, <ore:plateCopper>, null],
+[null, null, null],
+[null, null, null]]);
+
+//Gold Cable
+recipes.addShaped(<IC2:itemCable:2>, [
+[WireCutter, <ore:plateGold>, null],
+[null, null, null],
+[null, null, null]]);
+
+//HV Cable
+recipes.addShaped(<IC2:itemCable:5>, [
+[WireCutter, IronPlate, null],
+[null, null, null],
+[null, null, null]]);
+
+//Tin Cable
+recipes.addShaped(<IC2:itemCable:10>, [
+[WireCutter, <ore:plateTin>, null],
+[null, null, null],
+[null, null, null]]);
+
+//Wood Rotor Blade
+recipes.addShaped(<IC2:itemRecipePart:7>, [
+[<gregtech:gt.metaitem.01:17809>, <gregtech:gt.metaitem.01:17809>, <gregtech:gt.metaitem.01:17809>],
+[<gregtech:gt.metaitem.01:17809>, <ore:ringWood>, <gregtech:gt.metaitem.01:17809>],
+[<gregtech:gt.metaitem.01:17809>, <gregtech:gt.metaitem.01:17809>, <gregtech:gt.metaitem.01:17809>]]);
+
+//Kinetic Wind Generator Rotor Blade (Wood)
+recipes.addShaped(<IC2:itemwoodrotor>, [
+[<ore:stickIron>, <IC2:itemRecipePart:7>, HHammer],
+[<IC2:itemRecipePart:7>, <ore:ringIron>, <IC2:itemRecipePart:7>],
+[Screwdriver, <IC2:itemRecipePart:7>, <ore:screwIron>]]);
+
+//Iron Rotor Blade
+recipes.addShaped(<IC2:itemRecipePart:8>, [
+[IronPlate, IronPlate, IronPlate],
+[IronPlate, <ore:ringSteel>, IronPlate],
+[IronPlate, IronPlate, IronPlate]]);
+
+//Kinetic Wind Generator Rotor Blade (Iron)
+recipes.addShaped(<IC2:itemironrotor>, [
+[<IC2:itemRecipePart:11>, <IC2:itemRecipePart:8>, HHammer],
+[<IC2:itemRecipePart:8>, <ore:ringSteel>, <IC2:itemRecipePart:8>],
+[Wrench, <IC2:itemRecipePart:8>, <IC2:itemRecipePart:11>]]);
+
+//Steel Rotor Blade
+recipes.addShaped(<IC2:itemRecipePart:10>, [
+[SteelPlate, SteelPlate, SteelPlate],
+[SteelPlate, <ore:ringTungstenSteel>, SteelPlate],
+[SteelPlate, SteelPlate, SteelPlate]]);
+
+//Steel Rotor Blade
+recipes.addShapeless(<IC2:itemRecipePart:10>, [<Railcraft:part.turbine.blade>]);
+
+//Kinetic Wind Generator Rotor Blade (Steel)
+recipes.addShaped(<IC2:itemsteelrotor>, [
+[<IC2:itemRecipePart:12>, <IC2:itemRecipePart:10>, HHammer],
+[<IC2:itemRecipePart:10>, <ore:ringTungstenSteel>, <IC2:itemRecipePart:10>],
+[Wrench, <IC2:itemRecipePart:10>, <IC2:itemRecipePart:12>]]);
+
+//Carbon Rotor Blade
+recipes.addShaped(<IC2:itemRecipePart:9>, [
+[<IC2:itemPartCarbonPlate>, <IC2:itemPartCarbonPlate>, <IC2:itemPartCarbonPlate>],
+[<IC2:itemPartCarbonPlate>, <ore:ringIridium>, <IC2:itemPartCarbonPlate>],
+[<IC2:itemPartCarbonPlate>, <IC2:itemPartCarbonPlate>, <IC2:itemPartCarbonPlate>]]);
+
+//Kinetic Wind Generator Rotor Blade (Carbon)
+recipes.addShaped(<IC2:itemwcarbonrotor>, [
+[<ore:screwIridium>, <IC2:itemRecipePart:9>, HHammer],
+[<IC2:itemRecipePart:9>, <IC2:itemsteelrotor>, <IC2:itemRecipePart:9>],
+[Wrench, <IC2:itemRecipePart:9>, <ore:screwIridium>]]);
+
+// --- Steam Turbine Blade ---
+recipes.addShapeless(<IC2:itemSteamTurbineBlade>, [<Railcraft:part.turbine.disk>]);
+
+//Assembler Recipes
+
+//Solar Panels
+Assembler.addRecipe(<IC2:blockGenerator:3>, <IC2:blockMachine>, <gregtech:gt.metaitem.01:32750>,  600, 64);
+
+//Fluid/Solid Canning Machine
+Assembler.addRecipe(<IC2:blockMachine:6>, <gregtech:gt.blockmachines:231>, <gregtech:gt.blockmachines:431>, 600, 64);
+
+//Fermenter
+Assembler.addRecipe(<IC2:blockMachine2:13>, <gregtech:gt.blockmachines:501>, <IC2:itemRecipePart:5> * 2, 600, 64);
+
+//Radioisotope Heat Generatpr
+Assembler.addRecipe(<IC2:blockHeatGenerator:2>, <IC2:blockReactorChamber>, <IC2:itemRecipePart:5> * 3, 400, 32);
+
+//Radioisotope Thermoelectric Generator
+Assembler.addRecipe(<IC2:blockGenerator:6>, <IC2:blockReactorChamber>, <IC2:blockGenerator:8>, 400, 32);
+
+//Coil
+Assembler.addRecipe(<IC2:itemRecipePart>, <gregtech:gt.metaitem.01:23355>, <gregtech:gt.blockmachines:1360> * 16, 200, 32);
+
+//Coal Chunk
+Assembler.addRecipe(<IC2:itemPartCoalChunk>, <minecraft:coal_block>, <IC2:itemPartCoalBlock> * 8, 1200, 64);
+
+//Compressor Recipes//
+
+//Coal Coal Ball 
+Compressor.addRecipe(<IC2:itemPartCoalBlock>, <IC2:itemPartCarbonPlate> * 2);
+
+//Uranium Block
+Compressor.addRecipe(<IC2:blockMetal:3>, <IC2:itemUran238> * 9);
+
+//Plate Bender Recipes
+
+//Dense Obsidian Plate
+PlateBender.addRecipe(<IC2:itemDensePlates:7>, <gregtech:gt.metaitem.01:17804> * 9, 3600, 96);
+
+//Dense Lapis Lazuli Plate
+PlateBender.addRecipe(<IC2:itemDensePlates:8>, <gregtech:gt.metaitem.01:17526> * 9, 3600, 96);
+
+//Wiremill Recipes
+
+//Copper Cable
+Wiremill.addRecipe(<gregtech:gt.blockmachines:1360>, <IC2:itemCable:1>, 400, 4);
+
+//Gold Cable
+Wiremill.addRecipe(<gregtech:gt.blockmachines:1420>, <IC2:itemCable:2>, 600, 4);
+
+//HV Cable
+Wiremill.addRecipe(<gregtech:gt.blockmachines:1300>, <IC2:itemCable:5>, 600, 4);
+
+//Tin Cable
+Wiremill.addRecipe(<gregtech:gt.blockmachines:1240>, <IC2:itemCable:10>, 400, 4);

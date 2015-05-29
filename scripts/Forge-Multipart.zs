@@ -23,12 +23,16 @@ val StoneSaw = <ForgeMicroblock:sawStone>;
 val IronSaw = <ForgeMicroblock:sawIron>;
 val DiamondSaw = <ForgeMicroblock:sawDiamond>;
 
+val StoneBlade = <TConstruct:swordBlade:1>;
 val IronSawHead = <ore:toolHeadSawAnyIron>;
 
 
 
 // *======= Removing Recipes =======*
 
+
+// --- Stone Saw
+recipes.remove(StoneSaw);
 
 // --- Iron Saw
 recipes.remove(IronSaw);

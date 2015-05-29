@@ -3,7 +3,24 @@
 
 
 
+// *======= Importing Stuff =======*
+
+
+
+import minetweaker.item.IIngredient;
+import minetweaker.item.IItemStack;
+import mods.nei.NEI;
+import mods.gregtech.Wiremill;
+import mods.gregtech.Assembler;
+
+
 // *======= Variables =======*
+
+
+var AnyButton = [<RedLogic:redlogic.button>, <RedLogic:redlogic.button:1>, <RedLogic:redlogic.button:2>, <RedLogic:redlogic.button:3>, <RedLogic:redlogic.button:4>, <RedLogic:redlogic.button:5>, <RedLogic:redlogic.button:6>, <RedLogic:redlogic.button:7>, <RedLogic:redlogic.button:8>, <RedLogic:redlogic.button:9>, <RedLogic:redlogic.button:10>, <RedLogic:redlogic.button:11>, <RedLogic:redlogic.button:12>, <RedLogic:redlogic.button:13>, <RedLogic:redlogic.button:14>, <RedLogic:redlogic.button:15>] as IItemStack[];
+var AnyLatchButton = [<RedLogic:redlogic.button:16>, <RedLogic:redlogic.button:17>, <RedLogic:redlogic.button:18>, <RedLogic:redlogic.button:19>, <RedLogic:redlogic.button:20>, <RedLogic:redlogic.button:21>, <RedLogic:redlogic.button:22>, <RedLogic:redlogic.button:23>, <RedLogic:redlogic.button:24>, <RedLogic:redlogic.button:25>, <RedLogic:redlogic.button:26>, <RedLogic:redlogic.button:27>, <RedLogic:redlogic.button:28>, <RedLogic:redlogic.button:29>, <RedLogic:redlogic.button:30>, <RedLogic:redlogic.button:31>] as IItemStack[];
+var AnySelfLatchButton = [<RedLogic:redlogic.button:32>, <RedLogic:redlogic.button:33>, <RedLogic:redlogic.button:34>, <RedLogic:redlogic.button:35>, <RedLogic:redlogic.button:36>, <RedLogic:redlogic.button:37>, <RedLogic:redlogic.button:38>, <RedLogic:redlogic.button:39>, <RedLogic:redlogic.button:40>, <RedLogic:redlogic.button:41>, <RedLogic:redlogic.button:42>, <RedLogic:redlogic.button:43>, <RedLogic:redlogic.button:44>, <RedLogic:redlogic.button:45>, <RedLogic:redlogic.button:46>, <RedLogic:redlogic.button:47>] as IItemStack[];
+var AnyToggleButton = [<RedLogic:redlogic.button:48>, <RedLogic:redlogic.button:49>, <RedLogic:redlogic.button:50>, <RedLogic:redlogic.button:51>, <RedLogic:redlogic.button:52>, <RedLogic:redlogic.button:53>, <RedLogic:redlogic.button:54>, <RedLogic:redlogic.button:55>, <RedLogic:redlogic.button:56>, <RedLogic:redlogic.button:57>, <RedLogic:redlogic.button:58>, <RedLogic:redlogic.button:59>, <RedLogic:redlogic.button:60>, <RedLogic:redlogic.button:61>, <RedLogic:redlogic.button:62>, <RedLogic:redlogic.button:63>] as IItemStack[];
 
 val ANDGate = <RedLogic:redlogic.gates>;
 val ORGate = <RedLogic:redlogic.gates:1>;
@@ -254,6 +271,7 @@ val BlackDye = <minecraft:dye>;
 val GlowstonePlate = <ore:plateGlowstone>;
 val GlassRod = <ore:stickGlass>;
 val RSLamp = <minecraft:redstone_lamp>;
+val Paintbrush = <ExtraUtilities:paintbrush>;
 
 
 // *======= Removing Recipes =======*
@@ -463,6 +481,78 @@ recipes.remove(BrownIndicatorLamp);
 recipes.remove(GreenIndicatorLamp);
 recipes.remove(RedIndicatorLamp);
 recipes.remove(BlackIndicatorLamp);
+
+// --- Lumar Buttons
+recipes.remove(LumarButton);
+recipes.remove(OrangeButton);
+recipes.remove(MagentaButton);
+recipes.remove(LightBlueButton);
+recipes.remove(YellowButton);
+recipes.remove(LimeButton);
+recipes.remove(PinkButton);
+recipes.remove(GrayButton);
+recipes.remove(LightGrayButton);
+recipes.remove(CyanButton);
+recipes.remove(PurpleButton);
+recipes.remove(BlueButton);
+recipes.remove(BrownButton);
+recipes.remove(GreenButton);
+recipes.remove(RedButton);
+recipes.remove(BlackButton);
+
+// --- Latchable Buttons
+recipes.remove(LatchButton);
+recipes.remove(OrangeLatchButton);
+recipes.remove(MagentaLatchButton);
+recipes.remove(LightBlueLatchButton);
+recipes.remove(YellowLatchButton);
+recipes.remove(LimeLatchButton);
+recipes.remove(PinkLatchButton);
+recipes.remove(GrayLatchButton);
+recipes.remove(LightGrayLatchButton);
+recipes.remove(CyanLatchButton);
+recipes.remove(PurpleLatchButton);
+recipes.remove(BlueLatchButton);
+recipes.remove(BrownLatchButton);
+recipes.remove(GreenLatchButton);
+recipes.remove(RedLatchButton);
+recipes.remove(BlackLatchButton);
+
+// --- Self-Latching Buttons
+recipes.remove(SelfLatchButton);
+recipes.remove(OrangeSelfLatchButton);
+recipes.remove(MagentaSelfLatchButton);
+recipes.remove(LightBlueSelfLatchButton);
+recipes.remove(YellowSelfLatchButton);
+recipes.remove(LimeSelfLatchButton);
+recipes.remove(PinkSelfLatchButton);
+recipes.remove(GraySelfLatchButton);
+recipes.remove(LightGraySelfLatchButton);
+recipes.remove(CyanSelfLatchButton);
+recipes.remove(PurpleSelfLatchButton);
+recipes.remove(BlueSelfLatchButton);
+recipes.remove(BrownSelfLatchButton);
+recipes.remove(GreenSelfLatchButton);
+recipes.remove(RedSelfLatchButton);
+recipes.remove(BlackSelfLatchButton);
+
+// --- Toggleable Buttons
+recipes.remove(ToggleButton);
+recipes.remove(OrangeToggleButton);
+recipes.remove(MagentaToggleButton);
+recipes.remove(LightBlueToggleButton);
+recipes.remove(YellowToggleButton);
+recipes.remove(LimeToggleButton);
+recipes.remove(PinkToggleButton);
+recipes.remove(GrayToggleButton);
+recipes.remove(LightGrayToggleButton);
+recipes.remove(CyanToggleButton);
+recipes.remove(PurpleToggleButton);
+recipes.remove(BlueToggleButton);
+recipes.remove(BrownToggleButton);
+recipes.remove(GreenToggleButton);
+recipes.remove(RedToggleButton);
+recipes.remove(BlackToggleButton);
 
 
 // *======= Adding Back Recipes =======*

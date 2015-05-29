@@ -3,18 +3,6 @@
 
 
 
-// *======= Importing Stuff =======*
-
-
-import mods.nei.NEI;
-import mods.gregtech.AlloySmelter;
-import mods.gregtech.Assembler;
-import mods.gregtech.Centrifuge;
-import mods.ic2.Compressor;
-import mods.gregtech.PlateBender;
-
-
-
 // *======= Variables =======*
 
 
@@ -97,7 +85,6 @@ val DObsidianPlate = <ore:plateDenseObsidian>;
 val SSteelPlate = <ore:plateStainlessSteel>;
 val TiPlate = <ore:plateTitanium>;
 val IridiumPlate = <ore:plateIridium>;
-val GtObsidianPlate = <gregtech:gt.metaitem.01:17804>;
 
 val IronRod = <ore:stickAnyIron>;
 val SteelRod = <ore:stickSteel>;
@@ -145,7 +132,6 @@ val Piston = <minecraft:piston>;
 val IronBars = <minecraft:iron_bars>;
 val Potion = <minecraft:potion:*>;
 
-val ClearPane = <TConstruct:GlassPane>;
 val TannedLeather = <Backpack:tannedLeather>;
 val SnowSlab = <Railcraft:slab:3>;
 
@@ -245,12 +231,6 @@ recipes.remove(ApothecaryBackpack);
 
 
 
-// *======= Adding Back Recipes =======*
-
-// #======= Hiding Stuff =======#
-
-
-
 // --- Variables ---
 
 
@@ -258,9 +238,7 @@ val Plank = <ore:plankWood>;
 val Glass = <ore:glass>;
 val IronIngot = <ore:ingotIron>;
 val RedDye = <ore:dyeRed>;
-val HPBoiler = <gregtech:gt.blockmachines:101>;
 val HPBoilerTank = <Railcraft:machine.beta:4>;
-val SteelMCasing = <gregtech:gt.blockcasings2>;
 val ObsidianBlock = <ore:stoneObsidian>;
 
 val SteelAnvil = <Railcraft:anvil>;
@@ -279,7 +257,6 @@ val Stick = <ore:stickWood>;
 val NetherBricks = <ore:stoneNetherBrick>;
 val Wool = <ore:blockWool>;
 val IronPressurePlate = <minecraft:heavy_weighted_pressure_plate>;
-val ElectricPiston = <gregtech:gt.metaitem.01:32640>;
 
 val CoalCoke = <Railcraft:fuel.coke>;
 val CoalCokeBlock = <Railcraft:cube>;
@@ -303,12 +280,6 @@ val ReinforcedTrack = <Railcraft:track:24050>.withTag({track: "railcraft:track.r
 val HsTrack = <Railcraft:track:816>.withTag({track: "railcraft:track.speed"});
 val ElectricTrack = <Railcraft:track:10192>.withTag({track: "railcraft:track.electric"});
 
-val BronzePipe = <gregtech:gt.blockmachines:5123>;
-val SteelPipe = <gregtech:gt.blockmachines:5133>;
-val Pump = <gregtech:gt.metaitem.01:32610>;
-val Motor = <gregtech:gt.metaitem.01:32600>;
-val CopperWire = <gregtech:gt.blockmachines:1362>;
-val GoldWire = <gregtech:gt.blockmachines:1422>;
 val RedAlloyWire = <ore:wireGt01RedAlloy>;
 
 val IronFurnace = <IC2:blockMachine:1>;
@@ -384,25 +355,15 @@ recipes.remove(<Railcraft:machine.alpha:9>);
 recipes.remove(<Railcraft:machine.alpha:10>);
 
 // --- Iron Tank Wall ---
-recipes.removeShaped(<Railcraft:machine.beta>, [
-[IronPlate, IronPlate],
-[IronPlate, IronPlate]]);
+recipes.remove(<Railcraft:machine.beta>);
 //-
-recipes.removeShaped(<Railcraft:machine.beta>, [
-[Wrench, IronPlate, IronPlate],
-[HHammer, IronPlate, IronPlate]]);
+recipes.remove(<Railcraft:machine.beta>);
 
 // --- Iron Tank Gauge ---
-recipes.removeShaped(IronTankGauge, [
-[ClearPane, IronPlate, ClearPane],
-[IronPlate, ClearPane, IronPlate],
-[ClearPane, IronPlate, ClearPane]]);
+recipes.remove(IronTankGauge);
 
 // --- Iron Tank Valve ---
-recipes.removeShaped(<Railcraft:machine.beta:2>, [
-[IronBars, IronPlate, IronBars],
-[IronPlate, Lever, IronPlate],
-[IronBars, IronPlate, IronBars]]);
+recipes.remove(<Railcraft:machine.beta:2>);
 
 // --- Solid Fueled Boiler Firebox ---
 recipes.remove(<Railcraft:machine.beta:5>);
@@ -426,26 +387,16 @@ recipes.remove(<Railcraft:machine.beta:8>);
 recipes.remove(<Railcraft:machine.beta:9>);
 
 // --- Steel Tank Wall ---
-recipes.removeShaped(<Railcraft:machine.beta:13>, [
-[SteelPlate, SteelPlate],
-[SteelPlate, SteelPlate]]);
+recipes.remove(<Railcraft:machine.beta:13>);
 
 //-
-recipes.removeShaped(<Railcraft:machine.beta:13>, [
-[Wrench, SteelPlate, SteelPlate],
-[HHammer, SteelPlate, SteelPlate]]);
+recipes.remove(<Railcraft:machine.beta:13>);
 
 // --- Steel Tank Gauge ---
-recipes.removeShaped(<Railcraft:machine.beta:14>, [
-[ClearPane, SteelPlate, ClearPane],
-[SteelPlate, ClearPane, SteelPlate],
-[ClearPane, SteelPlate, ClearPane]]);
+recipes.remove(<Railcraft:machine.beta:14>);
 
 // --- Steel Tank Valve ---
-recipes.removeShaped(<Railcraft:machine.beta:15>, [
-[IronBars, SteelPlate, IronBars],
-[SteelPlate, <minecraft:lever>, SteelPlate],
-[IronBars, SteelPlate, IronBars]]);
+recipes.remove(<Railcraft:machine.beta:15>);
 
 // --- Anchor Sentinel ---
 recipes.remove(<Railcraft:machine.beta:10>);
@@ -707,5 +658,3 @@ recipes.remove(<Railcraft:machine.alpha:7>);
 
 // --- Sandy Block ---
 recipes.remove(<Railcraft:brick.sandy:2>);
-
-// --- add Recipes ---

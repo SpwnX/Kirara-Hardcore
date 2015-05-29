@@ -62,8 +62,6 @@ val DiamondRod = <ore:stickDiamond>;
 val SStoneRod = <ore:stickSandstone>;
 val CobbleRod = <ore:stickCobblestone>;
 
-val ClearPane = <TConstruct:GlassPane>;
-
 val SteelWire = <ore:wireGt01Steel>;
 val SteelWire2x = <ore:wireGt02Steel>;
 val SteelWire4x = <ore:wireGt04Steel>;

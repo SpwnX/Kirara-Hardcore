@@ -56,10 +56,8 @@ val BoundLeather = <Backpack:boundLeather>;
 val WovenCloth = <ore:materialCloth>;
 val String = <minecraft:string>;
 val Leather = <minecraft:leather>;
-val Paintbrush = <ExtraUtilities:paintbrush>;
 val SteelRing = <ore:ringSteel>;
 val SSteelRing = <ore:ringStainlessSteel>;
-val CraftingSlab = <TConstruct:CraftingSlab>;
 
 val All = <Backpack:backpack:*>;
 

@@ -97,10 +97,6 @@ val Refinery = <GalacticraftCore:tile.refinery>;
 val Telemetry = <GalacticraftCore:tile.telemetry>;
 val SpinThruster = <GalacticraftCore:tile.spinThruster>;
 
-val GtDeshDust = <gregtech:gt.metaitem.01:2884>;
-val GtDeshRod = <gregtech:gt.metaitem.01:23884>;
-val GtDeshIngot = <gregtech:gt.metaitem.01:11884>;
-
 val DeshStick = <GalacticraftMars:item.null:1>;
 val GSTorch = <GalacticraftCore:tile.glowstoneTorch>;
 val OxygenFan = <GalacticraftCore:item.airFan>;
@@ -233,73 +229,18 @@ val AlFoil = <ore:foilAluminium>;
 val AlRing = <ore:ringAluminium>;
 val AlScrew = <ore:screwAluminium>;
 val AlBolt = <ore:boltAluminium>;
-val DarkAshes = <gregtech:gt.metaitem.01:2816>;
 val RubberPlate = <ore:plateRubber>;
 val DSilverPlate = <ore:plateDenseSilver>;
 val DRedAlloyPlate = <ore:plateDenseRedAlloy>;
 val DiamondLens = <ore:lensDiamond>;
 
-val GtMeteorDust = <gregtech:gt.metaitem.01:2340>;
-val GtMeteorIngot = <gregtech:gt.metaitem.01:11340>;
-val GtTiIngot = <gregtech:gt.metaitem.01:11028>;
-val GtCopperPlate = <gregtech:gt.metaitem.01:17035>;
-val GtTinPlate = <gregtech:gt.metaitem.01:17057>;
-val GtBronzePlate = <gregtech:gt.metaitem.01:17300>;
-val GtAlPlate = <gregtech:gt.metaitem.01:17019>;
-val GtTiPlate = <gregtech:gt.metaitem.01:17028>;
-val GtDiamondPlate = <gregtech:gt.metaitem.01:17500>;
-val GtTripleCopperPlate = <gregtech:gt.metaitem.01:19035>;
-val GtTripleTinPlate = <gregtech:gt.metaitem.01:19057>;
-val GtTripleIronPlate = <gregtech:gt.metaitem.01:19032>;
-val GtTripleBronzePlate = <gregtech:gt.metaitem.01:19300>;
-val GtTripleSteelPlate = <gregtech:gt.metaitem.01:19305>;
-val GtTripleAlPlate = <gregtech:gt.metaitem.01:19019>;
-val GtTripleTiPlate = <gregtech:gt.metaitem.01:19028>;
-val GtAlRing = <gregtech:gt.metaitem.01:28019>;
-
-val OxygenCell = <gregtech:gt.metaitem.01:30013>;
-val NitrogenCell = <gregtech:gt.metaitem.01:30012>;
 val LiquidOxygenCell = <IC2:itemFluidCell>.withTag({Fluid: {Amount: 1000, FluidName: "liquidoxygen"}});
 val LiquidNitrogenCell = <IC2:itemFluidCell>.withTag({Fluid: {Amount: 1000, FluidName: "liquidnitrogen"}});
 
-val BasicBoard = <gregtech:gt.metaitem.01:32710>;
-val ProcessorBoard = <gregtech:gt.metaitem.01:32712>;
-val MVConveyor = <gregtech:gt.metaitem.01:32631>;
-val MVPiston = <gregtech:gt.metaitem.01:32641>;
-val LVPump = <gregtech:gt.metaitem.01:32610>;
-val MVPump = <gregtech:gt.metaitem.01:32611>;
-val HVPump = <gregtech:gt.metaitem.01:32612>;
-val MVMotor = <gregtech:gt.metaitem.01:32601>;
-val HVMotor = <gregtech:gt.metaitem.01:32602>;
-val EVMotor = <gregtech:gt.metaitem.01:32603>;
-val LVSensor = <gregtech:gt.metaitem.01:32690>;
-val Monitor = <gregtech:gt.metaitem.01:32740>;
-val MVSensor = <gregtech:gt.metaitem.01:32691>;
-val MVEmitter = <gregtech:gt.metaitem.01:32681>;
-val HVRobotArm = <gregtech:gt.metaitem.01:32652>;
-val FluidDetector = <gregtech:gt.metaitem.01:32732>;
 val SteelRotor = <ore:rotorSteel>;
 val AlRotor = <ore:rotorAluminium>;
-val SmallLithiumBat = <gregtech:gt.metaitem.01:32518>;
-val LargeLithiumBat = <gregtech:gt.metaitem.01:32538>;
-val SolarPanel = <gregtech:gt.metaitem.01:32750>;
-val GtSteelWrench = <gregtech:gt.metatool.01:16>.withTag({"GT.ToolStats": {PrimaryMaterial: "Steel", MaxDamage: 51200 as long, SecondaryMaterial: "Steel"}});
-
 val EFlowCircuit = <ore:circuitMaster>;
 val DataOrb = <ore:circuitUltimate>;
-
-val IntegratedCircuitFour = <gregtech:gt.integrated_circuit:4>;
-val IntegratedCircuitFive = <gregtech:gt.integrated_circuit:5>;
-val IntegratedCircuitSeven = <gregtech:gt.integrated_circuit:7>;
-val IntegratedCircuitEight = <gregtech:gt.integrated_circuit:8>;
-
-val MVHull = <gregtech:gt.blockmachines:12>;
-val HVHull = <gregtech:gt.blockmachines:13>;
-val MVChestBuffer = <gregtech:gt.blockmachines:9232>;
-val MVBatBuffer = <gregtech:gt.blockmachines:172>;
-val EVBatBuffer = <gregtech:gt.blockmachines:174>;
-val SteelFirebox = <gregtech:gt.blockcasings3:14>;
-val TSteelFirebox = <gregtech:gt.blockcasings3:15>;
 
 val AluminiumCable = <ore:cableGt01Aluminium>;
 val BrassPipe = <ore:pipeMediumBrass>;
@@ -314,23 +255,16 @@ val ReinforcedGlass = <ore:glassReinforced>;
 val RCIronPlate = <Railcraft:part.plate>;
 val RCSteelPlate = <Railcraft:part.plate:1>;
 val SteelSlab = <Railcraft:slab:43>;
-val SteelChest = <IronChest:BlockIronChest:4>;
 val SteelTankValve = <Railcraft:machine.beta:15>;
-val GlowstoneGlass = <ExtraUtilities:decorativeBlock2:7>;
 val WovenCloth = <harvestcraft:wovencottonItem>;
 val GasMask = <enviromine:gasMask>;
 val AirFilter = <enviromine:airFilter>;
-val ClearPane = <TConstruct:GlassPane>;
 val ScreenTierOne = <OpenComputers:screen1>;
 val RedAlloyWire = <RedLogic:redlogic.wire>;
 val Timer = <RedLogic:redlogic.gates:12>;
-val OBTank = <OpenBlocks:tank>;
 val IC2Terraformer = <IC2:blockMachine:15>;
 val CarpentersBed = <CarpentersBlocks:itemCarpentersBed>;
 val Teleporter = <IC2:blockMachine2>;
-val Igniter = <TMechworks:RedstoneMachine:1>;
-val SteelSpike = <ExtraUtilities:spike_base>;
-val Paintbrush = <ExtraUtilities:paintbrush>;
 
 val RSTorch = <minecraft:redstone_torch>;
 val RSLamp = <minecraft:redstone_lamp>;
@@ -352,12 +286,7 @@ val Stone = <ore:stone>;
 val TOneAlloy = <minecraft:stick>;
 val TTwoAlloy = <minecraft:stick>;
 val TThreeAlloy = <minecraft:stick>;
-val GrandmasterCircuit = <ore:circuitGrandmaster>;
 val HeavyAirVent = <minecraft:stick>;
-
-val CellShape = <gregtech:gt.metaitem.01:32354>;
-val PipeShape = <gregtech:gt.metaitem.01:32360>;
-val RodShape = <gregtech:gt.metaitem.01:32351>;
 
 val HHammer = <ore:craftingToolHardHammer>;
 val Wrench = <ore:craftingToolWrench>;
@@ -569,9 +498,6 @@ for i, Parachute in ParachuteArray {
 // --- Titanium Ingot
 furnace.remove(<*>, IlmeniteOre);
 furnace.remove(<*>, TiShard);
-
-// --- Meteoric Iron Ingot
-recipes.remove(GtMeteorIngot);
 
 // --- Desh Ingot
 recipes.remove(DeshIngot);

@@ -1,19 +1,6 @@
 // ******* Created by Arch-Nihil for *******
 // ******* the Grind-Complex modpack *******
 
-/*-------------------------*\
- ** WARNING : PYRO EDIT **
- --------------------------
- I commented some tool 
- removal so that people can 
- be able to cook decent 
- food while testing.
- Don't forget to un-comment
- them once you're done.
- 
- MixingBowl, Bakeware &
- CuttingBoard are concerned.
-\*-------------------------*/
  
 // *======= Importing Stuff =======*
 
@@ -35,7 +22,6 @@ val Bakeware = <harvestcraft:bakewareItem>;
 val CuttingBoard = <harvestcraft:cuttingboardItem>;
 
 val String = <minecraft:string>;
-val Cotton = <Natura:barleyFood:3>;
 val Stone = <ore:stone>;
 val Piston = <minecraft:piston>;
 val Plank = <ore:plankWood>;
@@ -48,9 +34,6 @@ val IronPlate = <ore:plateAnyIron>;
 val CopperRod = <ore:stickCopper>;
 val CopperIngot = <ore:ingotCopper>;
 val CopperPlate = <ore:plateCopper>;
-
-val SBrick = <TConstruct:materials:2>;
-val SBricksBlock = <TConstruct:Smeltery:2>;
 
 val Knife = <ore:craftingToolKnife>;
 val HHammer = <ore:craftingToolHardHammer>;

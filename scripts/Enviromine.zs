@@ -37,12 +37,9 @@ val GoldPlate = <ore:plateGold>;
 val IronPlate = <ore:plateAnyIron>;
 
 val IronScrew = <ore:screwAnyIron>;
-val TiDrillTip = <gregtech:gt.metaitem.02:8028>;
 
 val SteelBlock = <ore:blockSteel>;
 
-val ClearPane = <TConstruct:GlassPane>;
-val PaperStack = <TConstruct:materials>;
 val IronBars = <minecraft:iron_bars>;
 val Slimeball = <minecraft:slime_ball>;
 val Fertilizer = <Forestry:fertilizerCompound>;
@@ -53,7 +50,6 @@ val PackedIce = <minecraft:packed_ice>;
 val Luminator = <IC2:blockLuminatorDark>;
 val WovenCloth = <harvestcraft:wovencottonItem>;
 val TannedLeather = <Backpack:tannedLeather>;
-val CopperChest = <IronChest:BlockIronChest:3>;
 
 val Wrench = <ore:craftingToolWrench>;
 val Screwdriver = <ore:craftingToolScrewdriver>;
@@ -98,12 +94,3 @@ recipes.removeShaped(Slimeball * 4, [
 [null, RottenFood, null],
 [RottenFood, SpoiledMilk, RottenFood],
 [null, RottenFood, null]]);
-
-
-
-// *======= Adding Back Recipes =======*
-
-
-
-
-// #======= Hiding Stuff =======#

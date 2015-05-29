@@ -39,16 +39,9 @@ val BronzeRod = <ore:stickBronze>;
 val SteelRod = <ore:stickSteel>;
 val StainlessRod = <ore:stickStainlessSteel>;
 val TitaniumRod = <ore:stickTitanium>;
-val HSLARod = <ore:stickHSLA>;
-val IronScrew = <gregtech:gt.metaitem.01:27032>;
 val EnderEyePlate = <ore:plateEnderEye>;
 val EnderChest = <minecraft:ender_chest>;
-val IronWheels = <gregtech:gt.metaitem.01:32100>;
-val SteelWheels = <gregtech:gt.metaitem.01:32101>;
-val GTHammer = <gregtech:gt.metatool.01:12>;
-val GTScrewdriver = <gregtech:gt.metatool.01:22>;
 val RedAlloyPlate = <ore:plateRedAlloy>;
-val TrashCan = <ExtraUtilities:trashcan>;
 
 val BSpace = <JABBA:upgradeCore:1>;
 val RSUp = <JABBA:upgradeCore:2>;
@@ -135,32 +128,3 @@ recipes.remove(HopperUp);
 
 // --- Void Upgrade
 recipes.remove(VoidUp);
-
-
-
-// *======= Adding Back Recipes =======*
-
-
-// #======= Renaming Stuff =======#
-
-
-// --- Structural Upgrade MK I
-NEI.overrideName(MKI, "Structural Upgrade MK I (Wood)");
-
-// --- Structural Upgrade MK II
-NEI.overrideName(MKII, "Structural Upgrade MK II (Iron)");
-
-// --- Structural Upgrade MK III
-NEI.overrideName(MKIII, "Structural Upgrade MK III (Bronze)");
-
-// --- Structural Upgrade MK IV
-NEI.overrideName(MKIV, "Structural Upgrade MK IV (Steel)");
-
-// --- Structural Upgrade MK V
-NEI.overrideName(MKV, "Structural Upgrade MK V (Stainless Steel)");
-
-// --- Structural Upgrade MK VI
-NEI.overrideName(MKVI, "Structural Upgrade MK VI (Titanium)");
-
-// --- Structural Upgrade MK VII
-NEI.overrideName(MKVII, "Structural Upgrade MK VII (HSLA Steel)");

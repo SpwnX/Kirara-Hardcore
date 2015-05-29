@@ -31,19 +31,8 @@ val Screwdriver = <ore:craftingToolScrewdriver>;
 // *======= Removing Recipes =======*
 
 
-// --- Chisel
-recipes.remove(Chisel);
-
 // --- Cloud In A Bottle
 recipes.remove(BottledCloud);
 
 // --- Ball Of Moss
 recipes.remove(BallOMoss);
-
-
-
-// *======= Adding Back Recipes =======*
-
-
-
-// #======= Hiding Stuff =======#

@@ -1,29 +1,6 @@
 {
-    "_comment": "This is the default Mop Properties file. When this mod generates a default file for any mob, it will be an auto-formatted copy of this file. Remember, comments outside of functions (such as this one) will not be copied.",
-    "drops": [],
-    "pre_stats": [],
-    "stats": [
-        {
-            "function": "modifier",
-            "attribute": "generic.attackDamage",
-            "value": "-0.2~0.2",
-            "operator": 1
-        }
-	]
-	"stats": [	
-		{
-            "function": "modifier",
-            "attribute": "generic.attackDamage",
-            "value": "-0.2~0.2",
-            "operator": 1
-        }
-	]
-	"stats": [		
-		{
-            "function": "modifier",
-            "attribute": "generic.maxHealth",
-            "value": "0.0~1.0",
-            "operator": 1
-        }
-	]
+  "_comment": "This is the default Mop Properties file. When this mod generates a default file for any mob, it will be an auto-formatted copy of this file. Remember, comments outside of functions (such as this one) will not be copied.",
+  "drops": [],
+  "pre_stats": [],
+  "stats": []
 }

@@ -1,7 +1,8 @@
 // ******* Created by Arch-Nihil for *******
-// ******* the Grind-Complex modpack *******
+// ************* Kirara servers ************
 
- 
+
+
 // *======= Importing Stuff =======*
 
 
@@ -22,6 +23,7 @@ val Bakeware = <harvestcraft:bakewareItem>;
 val CuttingBoard = <harvestcraft:cuttingboardItem>;
 
 val String = <minecraft:string>;
+val Cotton = <harvestcraft:cottonItem>;
 val Stone = <ore:stone>;
 val Piston = <minecraft:piston>;
 val Plank = <ore:plankWood>;
@@ -34,6 +36,9 @@ val IronPlate = <ore:plateAnyIron>;
 val CopperRod = <ore:stickCopper>;
 val CopperIngot = <ore:ingotCopper>;
 val CopperPlate = <ore:plateCopper>;
+
+val SBrick = <minecraft:stonebrick>;
+val SBricksBlock = <minecraft:stonebrick>;
 
 val Knife = <ore:craftingToolKnife>;
 val HHammer = <ore:craftingToolHardHammer>;
@@ -54,19 +59,92 @@ recipes.remove(Juicer);
 recipes.remove(Mortar);
 
 // --- Mixing Bowl
-//recipes.remove(MixingBowl);
+recipes.remove(MixingBowl);
 
 // --- Bakeware
-//recipes.remove(Bakeware);
+recipes.remove(Bakeware);
 
 // --- Cutting Board
-//recipes.remove(CuttingBoard);
+recipes.remove(CuttingBoard);
 
 // --- All Sinks
 recipes.remove(AllSinks);
 
 
 // *======= Adding Back Recipes =======*
+
+
+// - Woven Cotton
+recipes.addShaped(WovenCloth, [
+[String, Cotton, String],
+[Cotton, String, Cotton],
+[String, Cotton, String]]);
+
+// --- Juicer
+recipes.addShaped(Juicer, [
+[null, Stone, null],
+[Piston, null, Piston],
+[Stone, Stone, Stone]]);
+
+// --- Mortar And Pestle
+recipes.addShaped(Mortar, [
+[HHammer, IronRod, null],
+[Stone, IronIngot, Stone],
+[Stone, Stone, Stone]]);
+// - Alternate Recipe
+recipes.addShaped(Mortar, [
+[null, IronRod, HHammer],
+[Stone, IronIngot, Stone],
+[Stone, Stone, Stone]]);
+// -
+recipes.addShaped(Mortar, [
+[HHammer, CopperRod, null],
+[Stone, CopperIngot, Stone],
+[Stone, Stone, Stone]]);
+// -
+recipes.addShaped(Mortar, [
+[null, CopperRod, HHammer],
+[Stone, CopperIngot, Stone],
+[Stone, Stone, Stone]]);
+
+// --- Mixing Bowl
+recipes.addShapedMirrored(MixingBowl, [
+[Plank, Stick, Plank],
+[Knife, Plank, null],
+[null, null, null]]);
+// - Alternate Recipe
+recipes.addShapedMirrored(MixingBowl, [
+[Plank, Stick, Plank],
+[null, Plank, Knife],
+[null, null, null]]);
+
+// --- Bakeware
+recipes.addShaped(Bakeware, [
+[SBrick, SBrick, SBrick],
+[SBricksBlock, null, SBricksBlock],
+[SBricksBlock, SBricksBlock, SBricksBlock]]);
+
+// --- Cutting Board
+recipes.addShaped(CuttingBoard, [
+[HHammer, IronPlate, File],
+[null, IronRod, null],
+[WoodSlab, WoodSlab, WoodSlab]]);
+// - Alternate Recipe
+recipes.addShaped(CuttingBoard, [
+[File, IronPlate, HHammer],
+[null, IronRod, null],
+[WoodSlab, WoodSlab, WoodSlab]]);
+// -
+recipes.addShaped(CuttingBoard, [
+[HHammer, CopperPlate, File],
+[null, CopperRod, null],
+[WoodSlab, WoodSlab, WoodSlab]]);
+// -
+recipes.addShaped(CuttingBoard, [
+[File, CopperPlate, HHammer],
+[null, CopperRod, null],
+[WoodSlab, WoodSlab, WoodSlab]]);
+
 
 // #======= Hiding Stuff =======#
 

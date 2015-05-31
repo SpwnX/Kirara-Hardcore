@@ -134,18 +134,20 @@ val FBronzeGear = <Forestry:gearBronze>;
 val FCopperGear = <Forestry:gearCopper>;
 val FTinGear = <Forestry:gearTin>;
 
-val TinRotor = <ore:rotorTin>;
+val GtBronzeGear = <gregtech:gt.meta.gearGt:8610>;
+
+val TinRotor = <ore:rotorTinAlloy>;
 val BronzeRotor = <ore:rotorBronze>;
-val SmallBronzePipe = <ore:pipeSmallBronze>;
-val LargeBrassPipe = <ore:pipeLargeBrass>;
-val LargeBronzePipe = <ore:pipeLargeBronze>;
+val SmallBronzePipe = <gregtech:gt.meta.gearGtSmall:8610>;
+val LargeBrassPipe = <gregtech:gt.meta.gearGt:8620>;
+val LargeBronzePipe = <gregtech:gt.meta.gearGt:8610>;
 
 val IronRod = <ore:stickAnyIron>;
 val IronScrew = <ore:screwIron>;
 val IronBolt = <ore:boltIron>;
 val IronRing = <ore:ringIron>;
 val CopperRod = <ore:stickAnyCopper>;
-val TinScrew = <ore:screwTin>;
+val TinScrew = <ore:screwTinAlloy>;
 val BronzeRod = <ore:stickAnyBronze>;
 val BronzeRing = <ore:ringAnyBronze>;
 val BronzeScrew = <ore:screwAnyBronze>;
@@ -162,21 +164,32 @@ val BronzePlate = <ore:plateAnyBronze>;
 val SteelPlate = <ore:plateSteel>;
 
 val CopperGear = <ore:gearCopper>;
-val TinGear = <ore:gearTin>;
+val TinGear = <ore:gearTinAlloy>;
 val SteelGear = <ore:gearSteel>;
 val AlGear = <ore:gearAluminium>;
-val SmallTinGear = <ore:gearGtSmallTin>;
+val SmallTinGear = <ore:gearGtSmallTinAlloy>;
 val SmallBronzeGear = <ore:gearGtSmallBronze>;
 val RedAlloyPlate = <ore:plateRedAlloy>;
 val SmallSteelGear = <ore:gearGtSmallSteel>;
 val BronzeGear = <ore:gearAnyBronze>;
 
-val GoodCircuit = <ore:circuitGood>;
-val Circuit = <ore:circuitBasic>;
+val GoodCircuit = <Forestry:chipsets:3>.withTag({T: 3 as short});
+val Circuit = <Forestry:chipsets:1>.withTag({T: 1 as short});
+val LVMotor = <grindcore:item.LVMotor>;
+val MVMotor = <grindcore:item.MVMotor>;
+val LVConveyor = <grindcore:item.LVConveyor>;
+val LVPiston = <grindcore:item.LVPiston>;
+val LVPump = <grindcore:item.LVPump>;
+val MVEmitter = <grindcore:item.MVEmitter>;
+val MVSensor = <grindcore:item.MVSensor>;
 
+val BasicCasing = <IC2:blockMachine>;
+val OBTank = <Railcraft:machine.beta:1>;
 val RedAlloyWire = <RedLogic:redlogic.wire>;
 val TannedLeather = <Backpack:tannedLeather>;
+val ItemCannon = <minecraft:dispenser>;
 val Coil = <IC2:itemRecipePart>;
+val ClearPane = <minecraft:glass_pane>;
 val EmptyCell = <ore:cellEmpty>;
 
 val StoneBricks = <minecraft:stonebrick>;
@@ -390,6 +403,813 @@ recipes.remove(MinerBackpack);
 
 
 // *======= Adding Back Recipes =======*
+
+
+// ||||||| Blocks |||||||
+
+
+// --- Sturdy Casing
+recipes.addShaped(SturdyCasing, [
+[BronzeRod, BronzePlate, BronzeRod],
+[BronzePlate, BasicCasing, BronzePlate],
+[BronzeRod, BronzePlate, BronzeRod]]);
+
+// --- Rain Tank
+recipes.addShaped(<Forestry:factory2:1>, [
+[IronPlate, OBTank, IronPlate],
+[IronPlate, SturdyCasing, IronPlate],
+[SteelPlate, IronPlate, SteelPlate]]);
+
+// --- Work Table
+recipes.addShaped(Worktable, [
+[TinPlate, GreenCarpet, TinPlate],
+[TinPlate, Bookshelf, TinPlate],
+[Chest, CraftTable, Chest]]);
+
+
+// ||||||| Machines |||||||
+
+// --- Analyzer
+recipes.addShaped(Analyzer, [
+[BronzePlate, BeeAnalyzer, BronzePlate],
+[GoodCircuit, SturdyCasing, Circuit],
+[BronzePlate, BronzeGear, BronzePlate]]);
+// - Alternate Recipe
+recipes.addShaped(Analyzer, [
+[BronzePlate, BeeAnalyzer, BronzePlate],
+[Circuit, SturdyCasing, GoodCircuit],
+[BronzePlate, BronzeGear, BronzePlate]]);
+
+// --- Bottler
+recipes.addShaped(Bottler, [
+[BronzePlate, LVPump, BronzePlate],
+[EmptyCan, SturdyCasing, EmptyCan],
+[SmallBronzeGear, LVMotor, SmallBronzeGear]]);
+
+// --- Carpenter
+recipes.addShaped(Carpenter, [
+[BronzePlate, TinScrew, BronzePlate],
+[SmallTinGear, SturdyCasing, SmallTinGear],
+[BronzeGear, LVMotor, BronzeGear]]);
+
+// --- Centrifuge
+recipes.addShaped(Centrifuge, [
+[BronzeRod, SmallTinGear, BronzeRod],
+[TinRotor, SturdyCasing, TinRotor],
+[BronzeGear, MVMotor, BronzeGear]]);
+
+// --- Fermenter
+recipes.addShaped(Fermenter, [
+[GoldPlate, LVPump, GoldPlate],
+[TinGear, SturdyCasing, TinGear],
+[GoldPlate, LVMotor, GoldPlate]]);
+
+// --- Moistener
+recipes.addShaped(Moistener, [
+[CopperGear, ClearPane, CopperGear],
+[SmallBronzePipe, SturdyCasing, SmallBronzePipe],
+[CopperGear, BronzePlate, CopperGear]]);
+
+// --- Squeezer
+recipes.addShaped(Squeezer, [
+[BronzePlate, TinGear, BronzePlate],
+[LVPiston, SturdyCasing, LVPiston],
+[BronzePlate, LVMotor, BronzePlate]]);
+
+// --- Still
+recipes.addShaped(Still, [
+[SteelPlate, RedAlloyPlate, SteelPlate],
+[BronzeRotor, SturdyCasing, BronzeRotor],
+[SteelGear, MVMotor, SteelGear]]);
+
+// --- Rain Maker
+recipes.addShaped(RainMaker, [
+[MVEmitter, ItemCannon, MVSensor],
+[LVPiston, HardCasing, LVPiston],
+[AlGear, DTinPlate, AlGear]]);
+
+// --- Thermionic Fabricator
+recipes.addShaped(Thermionic, [
+[Coil, Worktable, Coil],
+[Coil, SturdyCasing, Coil],
+[DTinPlate, LVMotor, DTinPlate]]);
+
+
+// ||||||| Engines |||||||
+
+
+// --- Electrical Engine
+recipes.addShaped(ElectricalEng, [
+[TinPlate, DTinPlate, TinPlate],
+[BronzeBolt, SturdyCasing, BronzeScrew],
+[TinGear, Piston, TinGear]]);
+
+
+// ||||||| Multi-Farm |||||||
+
+
+// --- Farm Block
+recipes.addShaped(FBStoneBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, StoneBricks, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBStoneBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, StoneBricks, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBMossyStoneBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, MossyStoneBricks, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBMossyStoneBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, MossyStoneBricks, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBCrackedStoneBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, CrackStoneBricks, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBCrackedStoneBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, CrackStoneBricks, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, Bricks, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, Bricks, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBSmoothSandstone, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, SmoothSStone, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBSmoothSandstone, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, SmoothSStone, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBChiseledSandstone, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, ChiseledSStone, BronzeRod],
+[HHammer, BronzeRod, HHammer]]);
+// - Alternate Recipe
+recipes.addShaped(FBChiseledSandstone, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, ChiseledSStone, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBNetherBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, NetherBricks, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBNetherBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, NetherBricks, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBChiseledStoneBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, ChiseledStoneBricks, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBChiseledStoneBricks, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, ChiseledStoneBricks, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBQuartzBlock, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, QuartzBlock, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBQuartzBlock, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, QuartzBlock, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBChiseledQuartzBlock, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, ChiseledQuartzBlock, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBChiseledQuartzBlock, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, ChiseledQuartzBlock, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Block
+recipes.addShaped(FBPillarQuartzBlock, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, PillarQuartzBlock, BronzeRod],
+[HHammer, BronzeRod, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FBPillarQuartzBlock, [
+[ApatineTube, BronzeRod, ApatineTube],
+[BronzeRod, PillarQuartzBlock, BronzeRod],
+[Wrench, BronzeRod, HHammer]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearStoneBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBStoneBricks, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearStoneBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBStoneBricks, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearMossyStoneBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBMossyStoneBricks, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearMossyStoneBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBMossyStoneBricks, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearCrackedStoneBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBCrackedStoneBricks, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearCrackedStoneBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBCrackedStoneBricks, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBBricks, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBBricks, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearSmoothSandstone, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBSmoothSandstone, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearSmoothSandstone, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBSmoothSandstone, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearChiseledSandstone, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBChiseledSandstone, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearChiseledSandstone, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBChiseledSandstone, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearNetherBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBNetherBricks, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearNetherBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBNetherBricks, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearChiseledStoneBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBChiseledStoneBricks, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearChiseledStoneBricks, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBChiseledStoneBricks, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearQuartzBlock, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBQuartzBlock, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearQuartzBlock, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBQuartzBlock, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearChiseledQuartzBlock, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBChiseledQuartzBlock, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearChiseledQuartzBlock, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBChiseledQuartzBlock, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Gearbox
+recipes.addShaped(FGearPillarQuartzBlock, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[HHammer, FBPillarQuartzBlock, Wrench],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+// - Alternate Recipe
+recipes.addShaped(FGearPillarQuartzBlock, [
+[BronzeGear, SmallSteelGear, BronzeGear],
+[Wrench, FBPillarQuartzBlock, HHammer],
+[BronzeGear, SmallSteelGear, BronzeGear]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchStoneBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBStoneBricks, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchStoneBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBStoneBricks, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchMossyStoneBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBMossyStoneBricks, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchMossyStoneBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBMossyStoneBricks, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchCrackedStoneBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBCrackedStoneBricks, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchCrackedStoneBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBCrackedStoneBricks, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBBricks, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBBricks, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchSmoothSandstone, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBSmoothSandstone, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchSmoothSandstone, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBSmoothSandstone, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchChiseledSandstone, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBChiseledSandstone, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchChiseledSandstone, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBChiseledSandstone, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchNetherBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBNetherBricks, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchNetherBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBNetherBricks, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchChiseledStoneBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBChiseledStoneBricks, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchChiseledStoneBricks, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBChiseledStoneBricks, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchQuartzBlock, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBQuartzBlock, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchQuartzBlock, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBQuartzBlock, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchChiseledQuartzBlock, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBChiseledQuartzBlock, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchChiseledQuartzBlock, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBChiseledQuartzBlock, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Hatch
+recipes.addShaped(FHatchPillarQuartzBlock, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBPillarQuartzBlock, LVConveyor],
+[HHammer, Hopper, Wrench]]);
+// --- Alternate Recipe
+recipes.addShaped(FHatchPillarQuartzBlock, [
+[BronzeGear, LargeBrassPipe, BronzeGear],
+[LVConveyor, FBPillarQuartzBlock, LVConveyor],
+[Wrench, Hopper, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveStoneBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBStoneBricks, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveStoneBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBStoneBricks, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveMossyStoneBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBMossyStoneBricks, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveMossyStoneBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBMossyStoneBricks, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveCrackedStoneBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBCrackedStoneBricks, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveCrackedStoneBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBCrackedStoneBricks, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBBricks, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBBricks, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveSmoothSandstone, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBSmoothSandstone, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveSmoothSandstone, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBSmoothSandstone, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveChiseledSandstone, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBChiseledSandstone, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveChiseledSandstone, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBChiseledSandstone, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveNetherBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBNetherBricks, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveNetherBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBNetherBricks, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveChiseledStoneBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBChiseledStoneBricks, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveChiseledStoneBricks, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBChiseledStoneBricks, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveQuartzBlock, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBQuartzBlock, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveQuartzBlock, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBQuartzBlock, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValveChiseledQuartzBlock, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBChiseledQuartzBlock, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValveChiseledQuartzBlock, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBChiseledQuartzBlock, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Valve
+recipes.addShaped(FValvePillarQuartzBlock, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBPillarQuartzBlock, LVPump],
+[HHammer, OBTank, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FValvePillarQuartzBlock, [
+[BronzeGear, LargeBronzePipe, BronzeGear],
+[LVPump, FBPillarQuartzBlock, LVPump],
+[Wrench, OBTank, HHammer]]);
+
+// --- Farm Control
+recipes.addShaped(FControlStoneBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBStoneBricks, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlStoneBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBStoneBricks, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlMossyStoneBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBMossyStoneBricks, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlMossyStoneBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBMossyStoneBricks, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlCrackedStoneBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBCrackedStoneBricks, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlCrackedStoneBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBCrackedStoneBricks, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBBricks, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBBricks, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlSmoothSandstone, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBSmoothSandstone, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlSmoothSandstone, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBSmoothSandstone, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlChiseledSandstone, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBChiseledSandstone, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlChiseledSandstone, [
+[Circuit, FBChiseledSandstone, Circuit],
+[RedAlloyWire, FBStoneBricks, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlNetherBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBNetherBricks, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlNetherBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBNetherBricks, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlCrackedStoneBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBCrackedStoneBricks, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlCrackedStoneBricks, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBCrackedStoneBricks, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlQuartzBlock, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBQuartzBlock, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlQuartzBlock, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBQuartzBlock, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlChiseledQuartzBlock, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBChiseledQuartzBlock, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlChiseledQuartzBlock, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBChiseledQuartzBlock, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+// --- Farm Control
+recipes.addShaped(FControlPillarQuartzBlock, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBPillarQuartzBlock, RedAlloyWire],
+[WireCutter, GoodCircuit, Wrench]]);
+// - Alternate Recipe
+recipes.addShaped(FControlPillarQuartzBlock, [
+[Circuit, RedAlloyWire, Circuit],
+[RedAlloyWire, FBPillarQuartzBlock, RedAlloyWire],
+[Wrench, GoodCircuit, WireCutter]]);
+
+
+// ||||||| Items |||||||
+
+
+// --- Bronze Gear
+recipes.addShapeless(FBronzeGear, [GtBronzeGear]);
+
+// --- Copper Gear
+
+// --- Tin Gear
+
+// --- Infuser
+recipes.addShaped(Infuser, [
+[null, BronzeRing, null],
+[null, BronzeRod, null],
+[File, IronBars, HHammer]]);
+// - Alternate Recipe
+recipes.addShaped(Infuser, [
+[null, BronzeRing, null],
+[null, BronzeRod, null],
+[HHammer, IronBars, File]]);
+
+// --- Can
+recipes.addShaped(EmptyCan * 2, [
+[null, TinPlate, null],
+[TinPlate, HHammer, TinPlate],
+[null, TinPlate, null]]);
+
+// --- Pipette
+recipes.addShaped(Pipette, [
+[null, RubberPlate, RubberPlate],
+[null, EmptyCell, RubberPlate],
+[GlassBolt, null, null]]);
+
+// --- Spectacles
+recipes.addShaped(Spectacles, [
+[IronScrew, Screwdriver, IronScrew],
+[IronRing, IronRod, IronRing],
+[GlassLens, IronBolt, GlassLens]]);
+
+
+// ||||||| Backpacks |||||||
+
+
+// --- Apiarist's Backpack
+recipes.addShaped(ApiaristBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, ApiaristChest, TannedLeather],
+[TannedLeather, TannedLeather, TannedLeather]]);
+
+// --- Lepidopterist's Backpack
+recipes.addShaped(LepidopteristBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, LepidoChest, TannedLeather],
+[TannedLeather, TannedLeather, TannedLeather]]);
+
+// --- Adventurer's Backpack
+recipes.addShaped(AdventurerBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, Chest, TannedLeather],
+[Bone, TannedLeather, Bone]]);
+
+// --- Builder's Backpack
+recipes.addShaped(BuilderBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, Chest, TannedLeather],
+[ClayBall, TannedLeather, ClayBall]]);
+
+// --- Digger's Backpack
+recipes.addShaped(DiggerBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, Chest, TannedLeather],
+[CobbleSlab, TannedLeather, CobbleSlab]]);
+
+// --- Forester's Backpack
+recipes.addShaped(ForesterBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, Chest, TannedLeather],
+[WoodSlab, TannedLeather, WoodSlab]]);
+
+// --- Hunter's Backpack
+recipes.addShaped(HunterBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, Chest, TannedLeather],
+[Feather, TannedLeather, Feather]]);
+
+// --- Miner's Backpack
+recipes.addShaped(MinerBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, Chest, TannedLeather],
+[IronRod, TannedLeather, IronRod]]);
+// - Alternate Recipe
+recipes.addShaped(MinerBackpack, [
+[String, BronzeRing, String],
+[TannedLeather, Chest, TannedLeather],
+[CopperRod, TannedLeather, CopperRod]]);
+
 
 
 // *======= Other Stuff (Renaming/Hiding) =======*

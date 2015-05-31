@@ -134,10 +134,6 @@ val FBronzeGear = <Forestry:gearBronze>;
 val FCopperGear = <Forestry:gearCopper>;
 val FTinGear = <Forestry:gearTin>;
 
-val GtBronzeGear = <gregtech:gt.metaitem.02:31300>;
-val GtCopperGear = <gregtech:gt.metaitem.02:31035>;
-val GtTinGear = <gregtech:gt.metaitem.02:31057>;
-
 val TinRotor = <ore:rotorTin>;
 val BronzeRotor = <ore:rotorBronze>;
 val SmallBronzePipe = <ore:pipeSmallBronze>;
@@ -177,21 +173,10 @@ val BronzeGear = <ore:gearAnyBronze>;
 
 val GoodCircuit = <ore:circuitGood>;
 val Circuit = <ore:circuitBasic>;
-val LVMotor = <gregtech:gt.metaitem.01:32600>;
-val MVMotor = <gregtech:gt.metaitem.01:32601>;
-val LVConveyor = <gregtech:gt.metaitem.01:32630>;
-val LVPiston = <gregtech:gt.metaitem.01:32640>;
-val LVPump = <gregtech:gt.metaitem.01:32610>;
-val MVEmitter = <gregtech:gt.metaitem.01:32681>;
-val MVSensor = <gregtech:gt.metaitem.01:32691>;
 
-val BasicCasing = <IC2:blockMachine>;
-val OBTank = <OpenBlocks:tank>;
 val RedAlloyWire = <RedLogic:redlogic.wire>;
 val TannedLeather = <Backpack:tannedLeather>;
-val ItemCannon = <OpenBlocks:cannon>;
 val Coil = <IC2:itemRecipePart>;
-val ClearPane = <TConstruct:GlassPane>;
 val EmptyCell = <ore:cellEmpty>;
 
 val StoneBricks = <minecraft:stonebrick>;

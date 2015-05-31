@@ -3,13 +3,6 @@
 
 
 
-// *======= Importing Stuff =======*
-
-
-import mods.nei.NEI;
-
-
-
 // *======= Variables =======*
 
 
@@ -102,17 +95,10 @@ val GoldChip = <BuildCraft|Silicon:redstoneChipset:2>;
 val DiamondChip = <BuildCraft|Silicon:redstoneChipset:3>;
 val EnderChip = <BuildCraft|Silicon:redstoneChipset:4>;
 
-val MVTransformer = <gregtech:gt.blockmachines:22>;
-val MVEBuffer = <gregtech:gt.blockmachines:162>;
-val ElectrumCable8x = <gregtech:gt.blockmachines:1449>;
-val LElectrumPipe = <gregtech:gt.blockmachines:5613>;
-val IVEmitter = <gregtech:gt.metaitem.01:32684>;
-
 val OverclockerUp = <IC2:upgradeModule>;
 val TransformerUp = <IC2:upgradeModule:1>;
 val StorageUp = <IC2:upgradeModule:2>;
 
-val PaperStack = <TConstruct:materials>;
 val CraftingT = <minecraft:crafting_table>;
 val EnderPearl = <ore:gemEnderPearl>;
 val Screen = <OpenComputers:screen3>;
@@ -260,11 +246,4 @@ recipes.remove(LChassiMK4);
 // --- Logistics Chassi MK5
 recipes.remove(LChassiMK5);
 
-
-
-// *======= Adding Back Recipes =======*
-
-
-
-// #======= Hiding Stuff =======#
 

@@ -2,5 +2,26 @@
   "_name": "npchumanmale",
   "drops": [],
   "pre_stats": [],
-  "stats": []
+    "stats": [
+        {
+            "function": "modifier",
+            "attribute": "generic.attackDamage",
+            "value": "-0.2~0.2",
+            "operator": 1
+        },
+  
+  {
+            "function": "modifier",
+            "attribute": "generic.movementSpeed",
+            "value": "-0.2~0.2",
+            "operator": 1
+        },
+  
+  {
+            "function": "modifier",
+            "attribute": "generic.maxHealth",
+            "value": "0.0~1.0",
+            "operator": 1
+        }
+    ]
 }

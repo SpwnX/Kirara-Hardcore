@@ -208,6 +208,12 @@ recipes.remove(QuarriedLantern);
 // --- Sandy Block Lantern
 recipes.remove(SandyLantern);
 
+// --- Stone Lantern
+recipes.remove(StoneLantern);
+
+// --- Sandstone Lantern
+recipes.remove(SandstoneLantern);
+
 // --- Iron Lantern
 recipes.remove(IronLantern);
 
@@ -597,7 +603,7 @@ recipes.removeShaped(<Railcraft:tool.signal.tuner>);
 recipes.removeShaped(<Railcraft:tool.surveyor>);
 
 // --- Coke Oven ---
-recipes.remove(<Railcraft:machine.alpha:7>);
+//recipes.remove(<Railcraft:machine.alpha:7>);
 
 // --- Sandy Block ---
 recipes.remove(<Railcraft:brick.sandy:2>);

@@ -31,8 +31,39 @@ val Screwdriver = <ore:craftingToolScrewdriver>;
 // *======= Removing Recipes =======*
 
 
+// --- Chisel
+recipes.remove(Chisel);
+
 // --- Cloud In A Bottle
 recipes.remove(BottledCloud);
 
 // --- Ball Of Moss
 recipes.remove(BallOMoss);
+
+
+
+// *======= Adding Back Recipes =======*
+
+
+// --- Chisel
+recipes.addShaped(Chisel, [
+[HHammer, IronPlate, IronPlate],
+[IronScrew, IronRod, IronPlate],
+[IronRod, IronScrew, Screwdriver]]);
+// - Alternate Recipe
+recipes.addShaped(Chisel, [
+[Screwdriver, IronPlate, IronPlate],
+[IronScrew, IronRod, IronPlate],
+[IronRod, IronScrew, HHammer]]);
+
+// --- Cloud In A Bottle
+recipes.addShaped(BottledCloud, [
+[TinyQuartzPile, TinyQuartzPile, TinyQuartzPile],
+[TinyQuartzPile, EmptyBottle, TinyQuartzPile],
+[TinyQuartzPile, TinyQuartzPile, TinyQuartzPile]]);
+
+// --- Ball Of Moss
+recipes.addShaped(BallOMoss, [
+[BOPMoss, Moss, BOPMoss],
+[Moss, MossyStoneBricks, Moss],
+[BOPMoss, Moss, BOPMoss]]);

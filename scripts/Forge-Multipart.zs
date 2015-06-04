@@ -41,5 +41,19 @@ recipes.remove(DiamondSaw);
 // *======= Adding Back Recipes =======*
 
 
+// --- Iron Saw
+recipes.addShaped(IronSaw, [
+[Stick, IronRod, IronRod],
+[Stick, IronSawHead, IronSawHead],
+[null, null, null]]);
+
+// --- Diamond Saw
+recipes.addShaped(DiamondSaw, [
+[Stick, DiamondRod, DiamondRod],
+[Stick, IronSawHead, IronSawHead],
+[null, null, null]]);
+
+
+
 // #======= Hiding Stuff =======#
 

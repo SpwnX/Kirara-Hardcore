@@ -36,10 +36,13 @@ val DenseLapisPlate = <ore:plateDenseLapis>;
 val GoldPlate = <ore:plateGold>;
 val IronPlate = <ore:plateAnyIron>;
 
+val TiDrillTip = <ore:toolHeadDrillTitanium>;
 val IronScrew = <ore:screwAnyIron>;
 
 val SteelBlock = <ore:blockSteel>;
 
+val Paper = <minecraft:paper>;
+val GlassPane=<ore:paneGlass>;
 val IronBars = <minecraft:iron_bars>;
 val Slimeball = <minecraft:slime_ball>;
 val Fertilizer = <Forestry:fertilizerCompound>;
@@ -50,6 +53,8 @@ val PackedIce = <minecraft:packed_ice>;
 val Luminator = <IC2:blockLuminatorDark>;
 val WovenCloth = <harvestcraft:wovencottonItem>;
 val TannedLeather = <Backpack:tannedLeather>;
+val Chest = <minecraft:chest>;
+val MVMotor = <grindcore:item.MVMotor>;
 
 val Wrench = <ore:craftingToolWrench>;
 val Screwdriver = <ore:craftingToolScrewdriver>;
@@ -86,7 +91,7 @@ recipes.remove(Respirator);
 // --- Dirt
 recipes.removeShaped(Dirt, [
 [RottenFood, RottenFood, RottenFood],
-[RottenFood, RottenFood, RottenFood],
+[RottenFood, null, RottenFood],
 [RottenFood, RottenFood, RottenFood]]);
 
 // --- Slimeball
@@ -94,3 +99,81 @@ recipes.removeShaped(Slimeball * 4, [
 [null, RottenFood, null],
 [RottenFood, SpoiledMilk, RottenFood],
 [null, RottenFood, null]]);
+
+
+// *============Adding Back Recipes=============*
+
+
+
+// --- Elevator Top
+recipes.addShaped(ElevatorTop, [
+[AlPlate, SmallTiGear, AlPlate],
+[SSteelGear, Luminator, SSteelGear],
+[IronBars, Wrench, IronBars]]);
+
+// --- Elevator Bottom
+recipes.addShaped(ElevatorBottom, [
+[IronBars, Wrench, IronBars],
+[SSteelGear, SteelBlock, SSteelGear],
+[AlPlate, TiDrillTip, AlPlate]]);
+
+// --- Davy Lamp
+recipes.addShaped(DavyLamp, [
+[null, GoldPlate, IronScrew],
+[GlassPane, Torch, GlassPane],
+[IronScrew, GoldPlate, Screwdriver]]);
+// - Alternate Recipe
+recipes.addShaped(DavyLamp, [
+[Screwdriver, GoldPlate, IronScrew],
+[GlassPane, Torch, GlassPane],
+[IronScrew, GoldPlate, null]]);
+
+// --- Esky
+recipes.addShaped(Esky, [
+[LapisPlate, Snow, LapisPlate],
+[Snow, Chest, Snow],
+[LapisPlate, Snow, LapisPlate]]);
+
+// --- Freezer
+recipes.addShaped(Freezer, [
+[DenseLapisPlate, PackedIce, DenseLapisPlate],
+[PackedIce, Esky, PackedIce],
+[DenseLapisPlate, MVMotor, DenseLapisPlate]]);
+
+// --- Camel Pack
+recipes.addShaped(CamelPack, [
+[RubberRing, TannedLeather, RubberRod],
+[TannedLeather, WovenCloth, TannedLeather],
+[TannedLeather, TannedLeather, TannedLeather]]);
+
+// --- Air Filter
+recipes.addShaped(Filter, [
+[IronPlate, Paper, IronPlate],
+[Paper, CharcoalDust, Paper],
+[IronPlate, Paper, IronPlate]]);
+
+// --- Respirator
+recipes.addShaped(Respirator, [
+[RubberRod, IronPlate, RubberRod],
+[IronPlate, GlassPane, IronPlate],
+[Filter, IronPlate, Filter]]);
+
+// --- Dirt
+Compressor.addRecipe(Dirt, RottenFood * 9);
+
+// --- Slimeball
+recipes.addShaped(Slimeball, [
+[RottenFood, null, RottenFood],
+[null, SpoiledMilk, null],
+[RottenFood, null, RottenFood]]);
+// - Alternate Recipes
+recipes.addShaped(Slimeball, [
+[null, RottenFood, null],
+[RottenFood, SpoiledMilk, RottenFood],
+[null, RottenFood, null]]);
+
+// --- Fertilizer
+recipes.addShaped(Fertilizer, [
+[RottenFood, Dirt, RottenFood],
+[Dirt, RottenFood, Dirt],
+[RottenFood, Dirt, RottenFood]]);

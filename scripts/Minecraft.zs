@@ -82,6 +82,7 @@ val IronDoor = <minecraft:iron_door>;
 val Bed = <minecraft:bed>;
 val Repeater = <minecraft:repeater>;
 val Comparator = <minecraft:comparator>;
+val DiamondPlate =  <ore:plateDiamond>;
 
 
 // ||||||| Vanilla Items |||||||
@@ -319,6 +320,8 @@ val SteelRing = <ore:ringSteel>;
 val GoldPlate = <ore:plateGold>;
 val WaterBucket = <ore:bucketWater>;
 val WoodPulp = <ore:dustWood>;
+val ReinforcedGlass = <ore:paneGlass>;
+val SmallNStarDust = <ore:dustSmallNetherStar>;
 
 
 // ||||||| Tools |||||||
@@ -333,6 +336,8 @@ val Saw = <ore:craftingToolSaw>;
 val Wrench = <ore:craftingToolWrench>;
 val WireCutter = <ore:craftingToolWireCutter>;
 
+val FieryBlood = <TwilightForest:item.fieryBlood>;
+
 
 
 // *======= Removing Recipes =======*
@@ -344,8 +349,83 @@ val WireCutter = <ore:craftingToolWireCutter>;
 // --- Chest
 recipes.remove(Chest);
 
+// --- Trapped Chest
+recipes.remove(TrappedChest);
+
+// --- Bedrock
+recipes.remove(Bedrock);
+
+// --- Dispenser
+recipes.remove(Dispenser);
+
+// --- Dropper
+recipes.remove(Dropper);
+
+// --- Piston
+recipes.remove(Piston);
+
+// --- Sticky Piston
+recipes.remove(SPiston);
+
+// --- Rail
+recipes.remove(Rail);
+
+// --- Booster Rail
+recipes.remove(BoosterRail);
+
+// --- Detector Rail
+recipes.remove(DetectorRail);
+
+// --- Activator Rail
+recipes.remove(ActivatorRail);
+
+// --- Noteblock
+recipes.remove(Noteblock);
+
+// --- Jukebox
+recipes.remove(Jukebox);
+
+// --- Bookshelf
+recipes.remove(Bookshelf);
+
+// --- Mossy Cobblestone
+recipes.remove(MossyCobble);
+
+// --- Mossy Stone Bricks
+recipes.remove(MossyBricks);
+
+// --- Obsidian
+recipes.remove(Obsidian);
+
+// --- Jack O' Lantern
+recipes.remove(JackOLantern);
+
+// --- Trapdoor
+recipes.remove(Trapdoor);
+
+// --- Pressure Plate
+recipes.remove(PressurePlate);
+
+// --- Wooden Pressure Plate
+recipes.remove(WoodPPlate);
+
+// --- Ladder
+recipes.remove(Ladder);
+
+// --- Fence
+recipes.remove(Fence);
+
+// --- Fence Gate
+recipes.remove(FenceGate);
+
+// --- Iron Bars
+recipes.remove(IronBars);
+
 // --- Enchantment Table
 recipes.remove(EnchantingTable);
+
+// --- Redstone Lamp
+recipes.remove(RSLamp);
 
 // --- Ender Chest
 recipes.remove(EnderChest);
@@ -353,14 +433,707 @@ recipes.remove(EnderChest);
 // --- Beacon
 recipes.remove(Beacon);
 
-// --- Charcoal
+// --- Anvil
+recipes.remove(Anvil);
+
+// --- Daylight Sensor
+recipes.remove(DaylightSensor);
+
+// --- Hopper
+recipes.remove(Hopper);
+
+// --- Sandstone
+recipes.remove(Sandstone);
+
+// --- Chiseled Sandstone
+recipes.remove(ChiseledSandstone);
+
+// --- Smooth Sandstone
+recipes.remove(SmoothSandstone);
+
+// --- TNT
+recipes.remove(TNT);
+
+// --- Quartz Block
+recipes.remove(QuartzBlock);
+
+// --- Chiseled Quartz
+recipes.remove(ChiseledQuartz);
+
+// --- Minecart With Chest
+recipes.removeShaped(ChestCart);
+
+// --- Minecart With Furnace
+recipes.removeShaped(FurnaceCart);
+
+// --- Minecart With Hopper
+recipes.removeShaped(HopperCart);
+
+// --- Minecart With TNT
+recipes.removeShaped(TNTCart);
+
+// --- Glass Pane
+recipes.remove(<minecraft:glass_pane>);
+
+// --- Brewing Stand
+recipes.remove(BrewingStand);
+
+// --- Bed
+recipes.remove(Bed);
+
+// --- Redstone Repeater
+recipes.remove(Repeater);
+
+
+// ||||||| Items |||||||
+
+
+// --- Torch
+recipes.remove(Torch);
+
+// --- Lever
+recipes.remove(Lever);
+
+// --- Button
+recipes.remove(Button);
+
+// --- Wooden Button
+recipes.remove(WoodButton);
+
+// --- Redstone Torch
+recipes.remove(RSTorch);
+
+// --- Tripwire Hook
+recipes.remove(Tripwire);
+
+// --- Diamond Sword
+recipes.remove(DSword);
+
+// --- Diamond Shovel
+recipes.remove(DShovel);
+
+// --- Diamond Pickaxe
+recipes.remove(DPick);
+
+// --- Diamond Axe
+recipes.remove(DAxe);
+
+// --- Diamond Hoe
+recipes.remove(DHoe);
+
+// --- Diamond Helmet
+recipes.remove(DHelm);
+
+// --- Diamond Chestplate
+recipes.remove(DChestplate);
+
+// --- Diamond Leggings
+recipes.remove(DLegs);
+
+// --- Diamond Boots
+recipes.remove(DBoots);
+
+// --- Coal
 furnace.remove(Charcoal);
 
+// --- Saddle
+recipes.remove(Saddle);
+
+// --- Clock
+recipes.remove(Clock);
+
+// --- Compass
+recipes.remove(Compass);
+
+// --- Iron Ingot
+recipes.remove(IronIngot);
+
+// --- Iron Nuggets
+recipes.remove(IronNugget);
+
+// --- Gold Ingot
+recipes.remove(GoldIngot);
+
+// --- Gold Nuggets
+recipes.remove(GoldNugget);
+
+// --- Sugar
+recipes.remove(Sugar);
+
+// --- Painting
+recipes.remove(Painting);
+
+// --- Item Frame
+recipes.remove(ItemFrame);
+
+// --- Sign
+recipes.remove(Sign);
+
+// --- Boat
+recipes.remove(Boat);
+
+// --- Paper
+recipes.remove(Paper);
+
+// --- Fishing Rod
+recipes.remove(FishRod);
+
+// --- Lapis
+recipes.remove(Lapis * 9);
+
+// --- Cake
+recipes.removeShaped(Cake, [
+[<*>, <*>, <*>],
+[Sugar, <*>, Sugar],
+[null, <*>, null]]);
+
+// --- Fermented Spider Eye
+recipes.remove(FSpiderEye);
+
+// --- Flower Pot
+recipes.remove(FlowerPot);
+
+// --- Lead
+recipes.remove(Lead);
+
+
+// ||||||| Adding Recipes |||||||
+
+
+
+// --- Crafting Table
+recipes.addShaped(CraftingTable, [
+[CarpentersBlock, CarpentersBlock],
+[CarpentersBlock, CarpentersBlock]]);
+
+// --- Trapped Chest
+recipes.addShaped(TrappedChest, [
+[null, Tripwire, null],
+[IronScrew, Chest, IronScrew],
+[null, Screwdriver, null]]);
+
+// --- Dispenser
+recipes.addShaped(Dispenser, [
+[StoneRod, IronPlate, StoneRod],
+[IronBars, String, IronPlate],
+[Cobble, Piston, Cobble]]);
+
+// --- Dropper
+recipes.addShaped(Dropper, [
+[StoneRod, IronPlate, StoneRod],
+[IronBars, String, IronPlate],
+[Cobble, Piston, Cobble]]);
+
+// --- Piston
+recipes.addShaped(Piston, [
+[CarpentersBlock, CarpentersBlock, CarpentersBlock],
+[IronScrew, IronPlate, IronScrew],
+[WoodGear, RedAlloyWire, WoodGear]]);
+
+// --- Sticky Piston
+recipes.addShaped(SPiston, [
+[null, SHammer, null],
+[null, Slimeball, null],
+[null, Piston, null]]);
+
+// --- Rail
+recipes.addShaped(Rail * 8, [
+[IronScrew, null , IronScrew],
+[StandardRail, WoodRailbed, StandardRail],
+[Screwdriver, null , HHammer]]);
+
+// --- Detector Rail
+recipes.addShaped(DetectorRail * 2, [
+[IronScrew, Detector, IronScrew],
+[StandardRail, WoodRailbed, StandardRail],
+[Screwdriver, RedAlloyWire, HHammer]]);
+
+// --- Activator Rail
+recipes.addShaped(ActivatorRail * 2, [
+[IronScrew, RSTorch, IronScrew],
+[StandardRail, WoodRailbed, StandardRail],
+[Screwdriver, RedAlloyWire, HHammer]]);
+
+// --- Redstone Repeater
+recipes.addShaped(Repeater, [
+[StoneCover, StoneCover, StoneCover],
+[RSTorch, RedAlloyWire, RSTorch],
+[StoneCover, StoneCover, StoneCover]]);
+
+// --- Redstone Comparator
+recipes.addShaped(Comparator, [
+[StoneCover, RSTorch, StoneCover],
+[RSTorch, AnyQuartz, RSTorch],
+[StoneCover, StoneCover, StoneCover]]);
+
+// --- Noteblock
+recipes.addShaped(Noteblock, [
+[Plank, Plank, Plank],
+[IronBars, WoodGear, IronBars],
+[Plank, RedAlloyWire, Plank]]);
+
+// --- Jukebox
+recipes.addShaped(Jukebox, [
+[Plank, AnyRecord, Plank],
+[Noteblock, WoodGear, Noteblock],
+[Plank, Diamond, Plank]]);
+
+// --- Bookshelf
+recipes.addShaped(Bookshelf, [
+[WoodSlab, WoodSlab, WoodSlab],
+[Book, Book, Book],
+[WoodSlab, WoodSlab, WoodSlab]]);
+
+// --- Jack O' Lantern
+recipes.addShapeless(JackOLantern,
+[Pumpkin, Torch, Knife]);
+
+// --- Trapdoor
+recipes.addShaped(Trapdoor, [
+[null, null, null],
+[null, null, null],
+[WoodSlab, WoodSlab, WoodSlab]]);
+// - Alternate Recipe
+recipes.addShaped(Trapdoor * 2, [
+[WoodSlab, WoodSlab, WoodSlab],
+[null, null, null],
+[WoodSlab, WoodSlab, WoodSlab]]);
+
+// --- Pressure Plate
+recipes.addShapedMirrored(PressurePlate, [
+[StoneSlab, StoneSlab],
+[RSDust, RSDust]]);
+
+// --- Wooden Pressure Plate
+recipes.addShapedMirrored(WoodPPlate, [
+[WoodSlab, WoodSlab],
+[RSDust, RSDust]]);
+
+// --- Ladder
+recipes.addShaped(Ladder, [
+[Stick, Flint.transformReplace(Flint), Stick],
+[Stick, Stick, Stick],
+[Stick, Flint, Stick]]);
+// - Alternate Recipe
+recipes.addShaped(Ladder * 2, [
+[Stick, Screwdriver, Stick],
+[Stick, Stick, Stick],
+[Stick, IronScrew, Stick]]);
+// - Alternate Recipe
+recipes.addShaped(Ladder * 4, [
+[Stick, Screwdriver, Stick],
+[Stick, Stick, Stick],
+[Stick, SteelScrew, Stick]]);
+
+// --- Fence
+recipes.addShaped(Fence, [
+[null, Flint.transformReplace(Flint), null],
+[Stick, Plank, Stick],
+[Stick, Plank, Stick]]);
+// -
+recipes.addShaped(Fence * 2, [
+[IronScrew, Screwdriver, IronScrew],
+[Stick, Plank, Stick],
+[Stick, Plank, Stick]]);
+// -
+recipes.addShaped(Fence * 4, [
+[SteelScrew, Screwdriver, SteelScrew],
+[Stick, Plank, Stick],
+[Stick, Plank, Stick]]);
+// -
+recipes.addShaped(Fence * 2, [
+[null, null, null],
+[Stick, CarpentersBlock, Stick],
+[Stick, CarpentersBlock, Stick]]);
+// -
+recipes.addShaped(Fence * 4, [
+[IronScrew, Screwdriver, IronScrew],
+[Stick, CarpentersBlock, Stick],
+[Stick, CarpentersBlock, Stick]]);
+// -
+recipes.addShaped(Fence * 6, [
+[SteelScrew, Screwdriver, SteelScrew],
+[Stick, CarpentersBlock, Stick],
+[Stick, CarpentersBlock, Stick]]);
+
+// --- Fence Gate
+recipes.addShaped(FenceGate, [
+[Flint, null, Flint.transformReplace(Flint)],
+[Plank, Stick, Plank],
+[Plank, Stick, Plank]]);
+// - Alternate Recipe
+recipes.addShaped(FenceGate, [
+[Flint.transformReplace(Flint), null, Flint],
+[Plank, Stick, Plank],
+[Plank, Stick, Plank]]);
+// -
+recipes.addShaped(FenceGate * 2, [
+[IronScrew, Screwdriver, IronScrew],
+[Plank, Stick, Plank],
+[Plank, Stick, Plank]]);
+// -
+recipes.addShaped(FenceGate * 4, [
+[SteelScrew, Screwdriver, SteelScrew],
+[Plank, Stick, Plank],
+[Plank, Stick, Plank]]);
+// -
+recipes.addShaped(FenceGate * 2, [
+[null, null, null],
+[CarpentersBlock, Stick, CarpentersBlock],
+[CarpentersBlock, Stick, CarpentersBlock]]);
+// -
+recipes.addShaped(FenceGate * 4, [
+[IronScrew, Screwdriver, IronScrew],
+[CarpentersBlock, Stick, CarpentersBlock],
+[CarpentersBlock, Stick, CarpentersBlock]]);
+// -
+recipes.addShaped(FenceGate * 6, [
+[SteelScrew, Screwdriver, SteelScrew],
+[CarpentersBlock, Stick, CarpentersBlock],
+[CarpentersBlock, Stick, CarpentersBlock]]);
+
+// --- Iron Bars
+recipes.addShaped(IronBars * 6, [
+[null, HHammer, null],
+[IronRod, IronRod, IronRod],
+[IronRod, IronRod, IronRod]]);
+// - Alternate Recipe
+recipes.addShaped(IronBars * 8, [
+[Screwdriver, IronScrew, HHammer],
+[IronRod, IronRod, IronRod],
+[IronRod, IronRod, IronRod]]);
+
+// --- Redstone Lamp
+recipes.addShaped(RSLamp, [
+[RedAlloyRod, GlassPane, RedAlloyRod],
+[GlassPane, GSBlock, GlassPane],
+[RedAlloyRod, RedAlloyWire, RedAlloyRod]]);
+
+// --- Ender Chest
+recipes.addShaped(EnderChest, [
+[EnderEyeRod, SmallNStarDust, EnderEyeRod],
+[SmallNStarDust, Chest, SmallNStarDust],
+[EnderEyeRod, DenseObsidianPlate, EnderEyeRod]]);
+
+// --- Tripwire Hook
+recipes.addShaped(Tripwire, [
+[null, IronRing, null],
+[null, IronRod, null],
+[null, Plank, null]]);
+// - Alternate Recipe
+recipes.addShaped(Tripwire * 2, [
+[IronRing, null, IronRing],
+[IronRod, null, IronRod],
+[Plank, null, Plank]]);
+
+// --- Beacon
+recipes.addShaped(Beacon, [
+[ReinforcedGlass, <ore:lensDiamond>, ReinforcedGlass],
+[ReinforcedGlass, NetherStar, ReinforcedGlass],
+[DenseObsidianPlate, DenseObsidianPlate, DenseObsidianPlate]]);
+
+// --- Anvil
+recipes.addShaped(Anvil, [
+[IronBlock, IronBlock, IronBlock],
+[IronBolt, IronBlock, IronScrew],
+[IronPlate, IronBlock, IronPlate]]);
+
+// --- Daylight Sensor
+recipes.addShaped(DaylightSensor, [
+[GlassPane, GlassPane, GlassPane],
+[NQuartzPlate, CertusPlate, NQuartzPlate],
+[WoodSlab, RedAlloyWire, WoodSlab]]);
+
+// --- Hopper
+recipes.addShaped(Hopper, [
+[IronPlate, Chest, IronPlate],
+[IronPlate, IronGear, IronPlate],
+[File, IronPlate, HHammer]]);
+// - Alternate Recipe
+recipes.addShaped(Hopper, [
+[IronPlate, Chest, IronPlate],
+[IronPlate, IronGear, IronPlate],
+[HHammer, IronPlate, File]]);
+
+// --- Brewing Stand
+recipes.addShaped(BrewingStand, [
+[SteelRing, BlazeRod, SteelRing],
+[IronBolt, SteelRod, IronScrew],
+[EmptyBottle, Cauldron, EmptyBottle]]);
+
+// --- Wooden Door
+recipes.addShapedMirrored(WoodDoor, [
+[Plank, Plank, Screwdriver],
+[Plank, IronRing, IronScrew],
+[Plank, Plank, Saw]]);
+// - Alternate Recipe
+recipes.addShapedMirrored(WoodDoor, [
+[Plank, Plank, Screwdriver],
+[Plank, CopperRing, CopperScrew],
+[Plank, Plank, Saw]]);
+// -
+recipes.addShapedMirrored(WoodDoor, [
+[Plank, Plank, Saw],
+[Plank, IronRing, IronScrew],
+[Plank, Plank, Screwdriver]]);
+// -
+recipes.addShapedMirrored(WoodDoor, [
+[Plank, Plank, Saw],
+[Plank, CopperRing, CopperScrew],
+[Plank, Plank, Screwdriver]]);
+
+// --- Iron Door
+recipes.addShaped(IronDoor, [
+[IronPlate, IronPlate, HHammer],
+[IronPlate, SteelRing, SteelScrew],
+[IronPlate, IronPlate, Screwdriver]]);
+// - Alternate Recipe
+recipes.addShaped(IronDoor, [
+[IronPlate, IronPlate, Screwdriver],
+[IronPlate, SteelRing, SteelScrew],
+[IronPlate, IronPlate, HHammer]]);
+
+// --- Bed
+recipes.addShaped(Bed, [
+[AnyCarpet, AnyCarpet, AnyCarpet],
+[AnyWool, AnyWool, AnyWool],
+[Plank, Plank, Plank]]);
+
+// --- Iron Horse Armor
+recipes.addShaped(IronHArmor, [
+[null, null, IronHelm],
+[IronPlate, IronChestplate, IronPlate],
+[IronLegs, HHammer, IronLegs]]);
+
+
+// ||||||| Items |||||||
+
+
+
+// --- Diamond Sword
+recipes.addShapedMirrored(DSword, [
+[null, DiamondPlate, null],
+[File, DiamondPlate, HHammer],
+[null, Stick, null]]);
+
+// --- Diamond Shovel
+recipes.addShapedMirrored(DShovel, [
+[File, DiamondPlate, HHammer],
+[null, Stick, null],
+[null, Stick, null]]);
+
+// --- Diamond Pickaxe
+recipes.addShaped(DPick, [
+[Diamond, DiamondPlate, DiamondPlate],
+[File, Stick, HHammer],
+[null, Stick, null]]);
+// - Alternate Recipe
+
+// --- Diamond Axe
+recipes.addShapedMirrored(DAxe, [
+[DiamondPlate, Diamond, HHammer],
+[DiamondPlate, Stick, null],
+[File, Stick, null]]);
+
+// --- Diamond Hoe
+recipes.addShapedMirrored(DHoe, [
+[DiamondPlate, Diamond, HHammer],
+[File, Stick, null],
+[null, Stick, null]]);
+
+// --- Diamond Helm
+recipes.addShapedMirrored(DHelm, [
+[DiamondPlate, DiamondPlate, DiamondPlate],
+[DiamondPlate, HHammer, DiamondPlate],
+[null, null, null]]);
+
+// --- Diamond Chestplate
+recipes.addShaped(DChestplate, [
+[DiamondPlate, HHammer, DiamondPlate],
+[DiamondPlate, DiamondPlate, DiamondPlate],
+[DiamondPlate, DiamondPlate, DiamondPlate]]);
+
+// --- Diamond Leggings
+recipes.addShaped(DLegs, [
+[DiamondPlate, DiamondPlate, DiamondPlate],
+[DiamondPlate, HHammer, DiamondPlate],
+[DiamondPlate, null, DiamondPlate]]);
+
+// --- Diamond Boots
+recipes.addShapedMirrored(DBoots, [
+[DiamondPlate, null, DiamondPlate],
+[DiamondPlate, HHammer, DiamondPlate],
+[null, null, null]]);
+
+// --- Lever
+recipes.addShapedMirrored(Lever, [
+[null, Stick, null],
+[RSDust, StoneSlab, RSDust],
+[null, null, null]]);
+
+// --- Button
+recipes.addShapedMirrored(Button, [
+[Cobble, RSDust],
+[null, null]]);
+// - Alternate Recipe
+recipes.addShapedMirrored(Button, [
+[RSDust, Cobble],
+[null, null]]);
+
+// --- Wooden Button
+recipes.addShapedMirrored(WoodButton, [
+[Plank, RSDust],
+[null, null]]);
+// - Alternate Recipe
+recipes.addShapedMirrored(WoodButton, [
+[RSDust, Plank],
+[null, null]]);
+
+// --- Redstone Torch
+recipes.addShapedMirrored(RSTorch , [
+[RSDust, null],
+[Torch, null]]);
+
+// --- Iron Horse Armor
+recipes.addShaped(IronHArmor, [
+[null, null, IronHelm],
+[IronPlate, IronChestplate, IronPlate],
+[IronLegs, HHammer, IronLegs]]);
+
+// --- Gold Horse Armor
+recipes.addShaped(GoldHArmor, [
+[null, null, GoldHelm],
+[GoldPlate, GoldChestplate, GoldPlate],
+[GoldLegs, HHammer, GoldLegs]]);
+
+// --- Diamond Horse Armor
+recipes.addShaped(DiamondHArmor, [
+[null, null, DHelm],
+[DiamondPlate, DChestplate, DiamondPlate],
+[DLegs, HHammer, DLegs]]);
+
+
+// --- Saddle
+recipes.addShaped(Saddle, [
+[Leather, TannedLeather, Leather],
+[Leather, AnyCarpet, Leather],
+[IronRing, WovenCloth, IronRing]]);
+
+// --- Clock
+recipes.addShaped(Clock, [
+[GoldPlate, GoldScrew, Screwdriver],
+[GoldBolt, Timer, GoldScrew],
+[Wrench, GoldBolt, GoldPlate]]);
+// - Alternate Recipe
+recipes.addShaped(Clock, [
+[Wrench, GoldScrew, GoldPlate],
+[GoldBolt, Timer, GoldScrew],
+[GoldPlate, GoldBolt, Screwdriver]]);
+
+// --- Compass
+recipes.addShaped(Compass, [
+[IronScrew, IronRing, MagIronRod],
+[GlassPane, SteelPlate, GlassPane],
+[RedAlloyBolt, Screwdriver, RedAlloyBolt]]);
+
+// --- Painting
+recipes.addShaped(Painting, [
+[String, IronRing, String],
+[Stick, AnyWool, Stick],
+[Stick, Stick, Stick]]);
+
+// --- Item Frame
+recipes.addShaped(ItemFrame, [
+[String, IronRing, String],
+[Stick, Leather, Stick],
+[Stick, Stick, Stick]]);
+
+// --- Sign
+recipes.addShaped(Sign, [
+[Plank, Plank, Plank],
+[Plank, Plank, Plank],
+[null, Stick, null]]);
+// - Alternate Recipe
+recipes.addShaped(Sign * 2, [
+[CarpentersBlock, CarpentersBlock, CarpentersBlock],
+[CarpentersBlock, CarpentersBlock, CarpentersBlock],
+[Screwdriver, Stick, IronScrew]]);
+// -
+recipes.addShaped(Sign * 2, [
+[CarpentersBlock, CarpentersBlock, CarpentersBlock],
+[CarpentersBlock, CarpentersBlock, CarpentersBlock],
+[IronScrew, Stick, Screwdriver]]);
+
+// --- Boat
+recipes.addShaped(Boat, [
+[IronScrew, Screwdriver, IronScrew],
+[Plank, Saw, Plank],
+[Plank, Plank, Plank]]);
+// - Alternate Recipe
+recipes.addShaped(Boat, [
+[IronScrew, Saw, IronScrew],
+[Plank, Screwdriver, Plank],
+[Plank, Plank, Plank]]);
+// -
+recipes.addShaped(Boat, [
+[CopperScrew, Screwdriver, CopperScrew],
+[Plank, Saw, Plank],
+[Plank, Plank, Plank]]);
+// - Alternate Recipe
+recipes.addShaped(Boat, [
+[CopperScrew, Saw, CopperScrew],
+[Plank, Screwdriver, Plank],
+[Plank, Plank, Plank]]);
+
+// --- Paper
+recipes.addShapedMirrored(Paper, [
+[null, null, null],
+[SugarCane, SugarCane, SugarCane],
+[null, null, null]]);
+// - Alternate Recipe
+recipes.addShapedMirrored(Paper * 2, [
+[WoodPulp, WoodPulp, WoodPulp],
+[SHammer, WaterBucket, null],
+[null, null, null]]);
+// -
+recipes.addShapedMirrored(Paper * 2, [
+[WoodPulp, WoodPulp, WoodPulp],
+[null, WaterBucket, SHammer],
+[null, null, null]]);
+
+// --- Fishing Rod
+recipes.addShaped(FishRod, [
+[null, null, Stick],
+[null, Stick, String],
+[IronRod, WireCutter, IronRing]]);
+// - Alternate Recipe
+recipes.addShaped(FishRod, [
+[null, null, Stick],
+[null, Stick, String],
+[IronRod, WireCutter, CopperRing]]);
+
+// --- Flower Pot
+recipes.addShapedMirrored(FlowerPot, [
+[Brick, File, Brick],
+[null, Brick, null],
+[null, null, null]]);
+
+// --- Lead
+recipes.addShaped(Lead, [
+[String, String, null],
+[String, Slimeball, null],
+[null, null, String]]);
 
 
 // *======= Adding Back Recipes =======*
 
 
+
+// --- Enchantment Table
+recipes.addShaped(EnchantingTable, [
+[FieryBlood, Diamond, FieryBlood],
+[DiamondRod, DenseObsidianPlate, DiamondRod],
+[ObsidianPlate, Bookshelf, ObsidianPlate]]);
 
 // --- Torch
 recipes.addShapedMirrored(Torch * 3, [

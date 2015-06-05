@@ -80,7 +80,7 @@ recipes.remove(Esky);
 recipes.remove(Freezer);
 
 // --- Camel Pack
-recipes.remove(CamelPack);
+//recipes.remove(CamelPack);
 
 // --- Air Filter
 recipes.remove(Filter);
@@ -141,10 +141,10 @@ recipes.addShaped(Freezer, [
 [DenseLapisPlate, MVMotor, DenseLapisPlate]]);
 
 // --- Camel Pack
-recipes.addShaped(CamelPack, [
-[RubberRing, TannedLeather, RubberRod],
-[TannedLeather, WovenCloth, TannedLeather],
-[TannedLeather, TannedLeather, TannedLeather]]);
+//recipes.addShaped(CamelPack, [
+//[RubberRing, TannedLeather, RubberRod],
+//[TannedLeather, WovenCloth, TannedLeather],
+//[TannedLeather, TannedLeather, TannedLeather]]);
 
 // --- Air Filter
 recipes.addShaped(Filter, [
